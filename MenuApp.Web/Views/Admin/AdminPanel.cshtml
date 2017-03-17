@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="~/scripts/Admin/Admin.js"></script>
+    <link href="~/Content/AdminContent/AdminPanel.css" rel="stylesheet"/>
+    <link href="~/Content/MaterialKit/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="~/Content/bootstrap.css" rel="stylesheet"/>
+    <script src="~/scripts/Commons/AjaxCommons.js"></script>
+    <style>
+        html > /**/ body body {
+            background-color: #eeeeee
+        }
+   
+    </style>
+
+</head>
+<body>
+ <div class="PopupPanel" style="display: none;">
+     <div class="MessageMenu">
+         <div id="date" style="background-color: green">
+             
+         </div>
+         <div class ="infoContainer">
+             <div id="TitleQuestion">
+
+             </div>
+             <div id="userQuestion" style="background-color: lightcoral">
+
+             </div>
+         </div>
+         <div id="answerField" style="background-color: white">
+             
+         </div>
+         <div style="clear: both"></div>
+         <div> <button>SEND!</button></div>
+     
+     </div>
+</div>
+<div class="Container">
+
+    <div class="Id_Panel">
+        <div class="Id_Panel_Atributs">
+            @Html.ActionLink("Users", "ShowUsers")
+            @Html.ActionLink("ShowRecipes", "ShowRecipes", "Recipe")
+            <div style="float: left">
+                @Html.Action("FindUsers")
+            </div>
+        </div>
+    </div>
+    <div>
+        @Html.Action("NewUsers", "Admin")
+    </div>
+    <div id="Information">
+        @Html.Action("NewRecipes", "Admin")
+    </div>
+    <div>
+        @Html.Action("ShowActiveQuestions")
+    </div>
+
+
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿@model MenuApp.Core.Entities.Contact
+<link href="~/Content/HomeContent/Contact.css" rel="stylesheet" />
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <section class="parallax">
+        <form class="Contact form-group">
+
+            <div style="float: left;">
+                <input type="text" name="Title"  class="form-control input-subject" placeholder="Temat">
+                <input type="text" name="Author"  class="form-control input-subject" placeholder="Autor">
+                <input type="text" name="Email"  class="form-control input-subject" placeholder="Mail">
+                <div style="clear: both;"></div>
+            </div>
+            <div class="message form-group">
+                <textarea name="Question" class="form-control" type="text" id="input-message" placeholder="Message" style="padding-top: 50px;"></textarea>
+            </div>
+            <div style="clear: both;"></div>
+            <button class="btn btn-primary btn-round" id="input-submit">Zapytaj</button>
+        </form>
+    </section>
+}
+
+        <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+        <script src="~/Scripts/jquery.validate.min.js"></script>
+        <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>

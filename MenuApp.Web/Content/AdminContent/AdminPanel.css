@@ -1,0 +1,61 @@
+﻿body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.Id_Panel {
+    background-color: #00bfff;
+    color: aliceblue;
+    height: 50px;
+    width: 100%;
+}
+
+.PopupPanel {
+    position: absolute;
+    background: red;
+    z-index: 1;
+    margin: 150px;
+}
+
+.Container {
+    width: 100%;
+}
+
+.MessageMenu {
+    height: 80%;
+    width: 90%;
+    background-color: blue;
+    margin: 5%;
+}
+
+#date {
+    width: 100%;
+    height: 5%;
+}
+
+#userQuestion {
+    height: 90%;
+    font-size: 350%;
+    overflow-y: auto;
+}
+
+#TitleQuestion {
+    height: 10%;
+}
+
+#answerField {
+    float: right;
+    width: 50%;
+    height: 95%;
+    font-size: 350%;
+}
+
+.Id_Panel_Atributs {
+    float: left;
+}
+
+.infoContainer {
+    float: left;
+    height: 95%;
+    width: 50%;
+}

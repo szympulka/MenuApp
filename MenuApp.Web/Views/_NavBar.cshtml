@@ -1,0 +1,32 @@
+﻿
+<link href="~/Content/_NavBar.css" rel="stylesheet"/>
+<div class="Top_Menu">
+    <div class="logo">
+        <img src="https://menusite.blob.core.windows.net/menusite/malina.jpg"/>
+        <span style="color: #c34f4f">Your</span>recipes.pl
+
+        @if (Request.IsAuthenticated)
+        {
+          <span>Witaj</span> @HttpContext.Current.User.Identity.Name    
+        }
+    </div>
+
+    <div class="menu">
+        @if (Request.IsAuthenticated)
+        {
+            <div>
+                <div class="menu_action">@Html.ActionLink("AddRecipe", "AddRecipe", "Recipe")|</div>
+                <div class="menu_action"> @Html.ActionLink("AdminPanel", "AdminPanel", "Admin")|</div>
+
+                <div class="menu_action">@Html.ActionLink("Logout", "Logout", "Authorization")|</div>
+            </div>
+        }
+        else
+        {
+            @Html.ActionLink("Login", "Login", "Authorization")
+        }
+
+    </div>
+</div>
+
+@RenderBody()

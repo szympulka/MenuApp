@@ -1,0 +1,41 @@
+﻿@model MenuApp.Services.Models.RecipeModel.DetailRecipe
+
+@{
+    ViewBag.Title = "DetailsRecipe";
+}
+<link href="~/Content/RecipeContent/DetailsRecipe.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="~/scripts/Commons/AjaxCommons.js"></script>
+<script src="~/scripts/Recipe/DetailsRecipe.js"></script>
+<div class="Container">
+    <div class="">
+        <div class="Recipe_Photo">
+            <img src="https://menusite.blob.core.windows.net/menusite/@Model.Recipe.Title" class="Photo" />
+        </div>
+        <div class="Title">
+            <div>
+                <h1><p>@Html.DisplayFor(model => model.Recipe.Title)</p></h1>
+            </div>
+            <div class="Description">@Html.DisplayFor(model => model.Recipe.Description)</div>
+        </div>
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div Id="RecipeLikes">
+                @if (!Model.UsersLikeRecipe)
+                {
+                    <div class="Likes">
+                        @Html.DisplayFor(model => model.Recipe.RecipeLikes)
+                    </div>
+                }
+                else if (Model.UsersLikeRecipe)
+                {
+                    <div class="UnLikes">
+                        @Html.DisplayFor(model => model.Recipe.RecipeLikes)
+                    </div>
+                }
+            </div>
+            <button onclick="Like(@Model.Recipe.Id);" style="height: 100px; width: 100px;"></button>
+        }
+    </div>
+</div>
+@Html.Action("AddRecipeComment")

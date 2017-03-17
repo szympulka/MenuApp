@@ -1,0 +1,47 @@
+﻿@model IEnumerable<MenuApp.Core.Entities.User>
+
+<div class="text-center" style="color: #03a9f4">
+    <h2>Nowi Użytkownicy</h2>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.UserName)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.DateCreateAccount)</th>
+            <th>@Html.DisplayNameFor(model => model.DateOfChangePassword)</th>
+            <th class="text-left" style="padding-right: 60px;">@Html.DisplayNameFor(model => model.Role)</th>
+            <th class="text-center">@Html.DisplayNameFor(model => model.IsActive)</th>
+
+        </tr>
+    </thead>
+    @foreach (var item in Model)
+    {
+        <tbody>
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.UserName)</td>
+            <td>@Html.DisplayFor(modelItem => item.Email)</td>
+            <td>@Html.DisplayFor(modelItem => item.DateCreateAccount)</td>
+            <td>@Html.DisplayFor(modelItem => item.DateOfChangePassword)</td>
+            <td>@Html.DisplayFor(modelItem => item.Role)</td>
+            <td class="text-center">@Html.DisplayFor(modelItem => item.IsActive)</td>
+            <td class="td-actions text-right">
+                <a href="InfoUser/@item.Id">
+                    <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                        <i class="glyphicon glyphicon-user"></i>
+                    </button></a>
+                <a href="EditUsers/@item.Id">
+                    <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                        <i class="glyphicon glyphicon-edit"></i>
+                    </button></a>
+                <a href="DisableUser/@item.Id">
+                    <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </button>
+                </a>
+
+            </td>
+        </tr>
+        </tbody>
+    }
+</table>

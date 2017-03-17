@@ -1,0 +1,27 @@
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AdvancedSearch</title>
+</head>
+<body>
+<div>
+    @using (Html.BeginForm())
+    {
+        <div class ="inputs">
+        <input name="components[0]" type="text"/>
+        <input name="components[1]" type="text"/>
+        <input name="components[2]" type="text"/>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Create" class="btn btn-default"/>
+                </div>
+            </div>
+            </div>
+    }
+</div>
+</body>
+</html>

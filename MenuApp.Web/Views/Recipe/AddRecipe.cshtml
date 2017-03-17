@@ -1,0 +1,51 @@
+﻿@model MenuApp.Core.Entities.Recipe
+
+@{
+    ViewBag.Title = "AddRecipe";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="~/scripts/Commons/AjaxCommons.js"></script>
+<link href="~/Content/bootstrap.css" rel="stylesheet" />
+<script src="~/scripts/Recipe/Recipe.js"></script>
+<link href="~/Content/RecipeContent/AddRecipe.css" rel="stylesheet" />
+<script src="~/scripts/Recipe/AddRecipe.js"></script>
+
+<form action="/Recipe/AddRecipe" enctype="multipart/form-data" method="post" style="display: inline-block;">
+    <div style="width:550px;">
+        <input type="text" name="Title" placeholder="Title" id="Title" class="form" />
+        <div style="display: none;" Id="TitleInfo">load</div>
+        <input type="text" name="Description" placeholder="Description" id="Description" class="form" />
+        <input type="text" name="ShortDescription" placeholder="ShortDescription" id="ShortDescription" class="form" />
+        <input type="text" name="CategoryOfFood" placeholder="CategoryOfFood" id="CategoryOfFood" class="form" />
+        <input type="text" name="Category" placeholder="Category" id="Category" class="form" />
+        <input type="text" name="PreparationTime" placeholder="PreparationTime" id="PreparationTime" class="form" />
+    </div>
+    <div>
+        <div id="AddComponent">
+            <button onclick="AddComponent()">Kliknij mnie</button>
+            <input name="Components[0].Name" type="text" />
+            <input name="Components[1].Name" type="text" />
+            <input name="Components[2].Name" type="text" />
+        </div>
+
+        <input type="file" name="file" accept="image/*">
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+
+
+@*<select>
+        <option value="VeryEasy">Bardzo Łatwe</option>
+        <option value="Easy">Łatwe</option>
+        <option value="MiddleDifficult">Średnio trudne</option>
+        <option value="Hard">Trudne</option>
+        <option value="VeryHard">Bardzo Trudne</option>
+    </select>*@
+
+

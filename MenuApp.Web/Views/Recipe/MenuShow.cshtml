@@ -1,0 +1,32 @@
+﻿@model IDictionary<string,IEnumerable<string>>
+
+@{
+
+Layout = null;
+}
+<link href="~/Content/HomeContent/Index.css" rel="stylesheet" />
+
+<!DOCTYPE html>
+
+        @foreach (var items in Model)
+        {
+            <div style="float: left; padding: 15px;">
+                
+                <div >
+                    <h1> <a href="/Recipe/SearchByCategory?category=@items.Key">@items.Key</a></h1>
+                </div>
+
+                <div >
+                    @foreach (var groupItem in items.Value)
+                    {
+
+                        <div style="padding: 5px;"><a href="/Recipe/SearchByCategory?category=@items.Key&categoryOfFood=@groupItem">@groupItem</a></div>
+                        <div style="clear: both;"></div>
+                    }
+                </div>
+            </div>
+           
+        }
+
+    <div style="clear: both;"></div>
+

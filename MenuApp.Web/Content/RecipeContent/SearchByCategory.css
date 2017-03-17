@@ -1,0 +1,62 @@
+﻿.Recipe{
+    height:280px;
+    width: 80%;
+    margin-left:auto;
+    margin-right:auto;
+    padding:15px;
+}
+.Photo{
+height:200px;
+width:20%;
+float:left;
+}
+.Title{
+   text-align:center;
+   
+}
+.DescriptionInfo
+{
+    float:right;
+    height:120px;
+    width:80%;
+}
+.Recipe_Info{
+    width:100%;
+    height:50px;
+    float:left;
+    
+}
+.Likes{
+    margin-top:-25px;
+    height:50%;
+    width:50px;
+}
+.UnLikes{
+    margin-top:-25px;
+    color:red;
+    height:50%;
+    width:50px;
+}
+.Button_toRecipe{
+    float:right;
+    width: 200px;
+    height:50px;
+}
+.More
+{
+    height:50px;
+    width:120px;
+    background:red;
+    margin-top:-50px;
+    float:right;
+}
+.Hard_Level {
+    width: 15%;
+    height: 120px;
+    background: red;
+    float: left;
+}
+.ShortDescription {
+    height: 120px;
+    float: right;
+}

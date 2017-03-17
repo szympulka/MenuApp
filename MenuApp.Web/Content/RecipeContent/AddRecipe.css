@@ -1,0 +1,30 @@
+﻿.form {
+    height: 30px;
+    width: 500px;
+}
+#Title {
+  
+}
+#Description {
+    
+}
+#CategoryOfFood {
+ 
+}
+#Category {
+  
+}
+#PreparationTime {
+
+}
+#TitleInfo {
+    width: 50px; 
+    height: 30px; 
+    float: right;
+}
+.TitleInfoOk {
+    background: green;
+}
+.TitleInfoWrong {
+    background: red;
+}

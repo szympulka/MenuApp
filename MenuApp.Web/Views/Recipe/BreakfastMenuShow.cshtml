@@ -1,0 +1,10 @@
+﻿@model IEnumerable<MenuApp.Core.Entities.Recipe>
+
+
+    @foreach (var item in Model)
+    {
+        <div>
+            @Html.DisplayFor(modelItem => item.Category)
+    </div>
+    }
+    

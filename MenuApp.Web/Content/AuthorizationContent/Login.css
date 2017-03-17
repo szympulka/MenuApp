@@ -1,0 +1,377 @@
+﻿.box {
+    -ms-transform: scale(1);
+    -webkit-transform: scale(1);
+    background: #fff;
+    border-radius: 10px;
+    float: left;
+    opacity: 1;
+    padding: 60px 50px 40px 50px;
+    position: relative;
+    top: 0;
+    transform: scale(1);
+    width: 100%;
+    z-index: 5;
+}
+
+.box.back {
+    -ms-transform: scale(.95);
+    -webkit-transform: scale(.95);
+    opacity: .8;
+    top: -20px;
+    transform: scale(.95);
+    z-index: -1;
+}
+
+.box:before {
+    -ms-transform: scale(.95);
+    -webkit-transform: scale(.95);
+    background: rgba(255, 255, 255, .6);
+    border-radius: 10px;
+    content: "";
+    height: 30px;
+    left: 0;
+    position: absolute;
+    top: -10px;
+    transform: scale(.95);
+    width: 100%;
+    z-index: -1;
+}
+
+.overbox .title { color: #fff; }
+
+.overbox .title:before { background: #fff; }
+
+.title {
+    color: #ED2553;
+    float: left;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 46px;
+    position: relative;
+    width: 100%;
+}
+
+.title:before {
+    background: #ED2553;
+    content: "";
+    height: 100%;
+    left: -50px;
+    position: absolute;
+    top: 0;
+    width: 5px;
+}
+
+.input,
+.input label,
+.input input,
+.input .spin,
+.button,
+.button button .button.login button i.fa,
+.material-button .shape:before,
+.material-button .shape:after,
+.button.login button {
+    -ms-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+    -webkit-transition: 300ms cubic-bezier(.4, 0, .2, 1);
+    transition: 300ms cubic-bezier(.4, 0, .2, 1);
+}
+
+.material-button,
+.alt-2,
+.material-button .shape,
+.alt-2 .shape,
+.box {
+    -ms-transition: 400ms cubic-bezier(.4, 0, .2, 1);
+    -webkit-transition: 400ms cubic-bezier(.4, 0, .2, 1);
+    transition: 400ms cubic-bezier(.4, 0, .2, 1);
+}
+
+.input,
+.input label,
+.input input,
+.input .spin,
+.button,
+.button button {
+    float: left;
+    width: 100%;
+}
+
+.input,
+.button {
+    height: 70px;
+    margin-top: 30px;
+}
+
+.input,
+.input input,
+.button,
+.button button { position: relative; }
+
+.input input {
+    background: transparent;
+    border: none;
+    height: 60px;
+    top: 10px;
+}
+
+.input input,
+.input label,
+.button button {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.input:before,
+.input .spin {
+    bottom: 0;
+    height: 1px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.input:before {
+    background: rgba(0, 0, 0, 0.1);
+    content: "";
+    z-index: 3;
+}
+
+.input .spin {
+    background: #ED2553;
+    width: 0;
+    z-index: 4;
+}
+
+.overbox .input .spin { background: rgba(255, 255, 255, 1); }
+
+.overbox .input:before { background: rgba(255, 255, 255, 0.5); }
+
+.input label {
+    cursor: pointer;
+    left: 0;
+    line-height: 60px;
+    position: absolute;
+    top: 10px;
+    z-index: 2;
+}
+
+.button.login {
+    left: 20%;
+    width: 60%;
+}
+
+.button.login button,
+.button button {
+    background-color: transparent;
+    border: 3px solid rgba(0, 0, 0, 0.1);
+    color: rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: 900;
+    left: 0%;
+    line-height: 64px;
+    width: 100%;
+}
+
+.button.login { margin-top: 30px; }
+
+.button { margin-top: 20px; }
+
+.button button {
+    background-color: #fff;
+    border: none;
+    color: #ED2553;
+}
+
+.button.login button.active {
+    border: 3px solid transparent;
+    color: #fff !important;
+}
+
+.button.login button.active span {
+    -ms-transform: scale(0);
+    -webkit-transform: scale(0);
+    opacity: 0;
+    transform: scale(0);
+}
+
+.button.login button.active i.fa {
+    -ms-transform: scale(1) rotate(-0deg);
+    -webkit-transform: scale(1) rotate(-0deg);
+    opacity: 1;
+    transform: scale(1) rotate(-0deg);
+}
+
+.button.login button i.fa {
+    -ms-transform: scale(0) rotate(-45deg);
+    -webkit-transform: scale(0) rotate(-45deg);
+    height: 100%;
+    left: 0;
+    line-height: 60px;
+    position: absolute;
+    top: 0;
+    transform: scale(0) rotate(-45deg);
+    width: 100%;
+}
+
+.button.login button:hover {
+    border-color: #ED2553;
+    color: #ED2553;
+}
+
+.button {
+    margin: 40px 0;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.button button {
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+}
+
+.pass-forgot {
+    color: rgba(0, 0, 0, 0.4);
+    float: left;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+}
+
+.click-efect {
+    background: #ED2553;
+    border-radius: 50%;
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.overbox {
+    border-radius: 10px;
+    height: 100%;
+    left: 0;
+    overflow: inherit;
+    padding: 60px 50px 40px 50px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+.overbox .title,
+.overbox .button,
+.overbox .input {
+    color: #fff !important;
+    display: none;
+    position: relative;
+    z-index: 111;
+}
+
+.overbox .title { width: 80%; }
+
+.overbox .input { margin-top: 20px; }
+
+.overbox .input input,
+.overbox .input label { color: #fff; }
+
+.overbox .material-button,
+.overbox .material-button .shape,
+.overbox .alt-2,
+.overbox .alt-2 .shape { display: block; }
+
+.material-button,
+.alt-2 {
+    -ms-transform: translate(0%, 0%);
+    -webkit-transform: translate(0%, 0%);
+    background: #ED2553;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 140px;
+    position: absolute;
+    right: -70px;
+    top: 40px;
+    transform: translate(0%, 0%);
+    width: 140px;
+    z-index: 100;
+}
+
+.material-button .shape,
+.alt-2 .shape {
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+}
+
+.material-button .shape:before,
+.alt-2 .shape:before,
+.material-button .shape:after,
+.alt-2 .shape:after {
+    -ms-transform: translate(-50%, -50%) rotate(360deg);
+    -webkit-transform: translate(-50%, -50%) rotate(360deg);
+    background: #fff;
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(360deg);
+}
+
+.material-button .shape:before,
+.alt-2 .shape:before {
+    height: 4px;
+    width: 25px;
+}
+
+.material-button .shape:after,
+.alt-2 .shape:after {
+    height: 25px;
+    width: 4px;
+}
+
+.material-button.active,
+.alt-2.active {
+    -ms-transform: translate(50%, -50%) rotate(0deg);
+    -webkit-transform: translate(50%, -50%) rotate(0deg);
+    right: 50%;
+    top: 50%;
+    transform: translate(50%, -50%) rotate(0deg);
+}
+
+body {
+    background-image: url(https://lh4.googleusercontent.com/-XplyTa1Za-I/VMSgIyAYkHI/AAAAAAAADxM/oL-rD6VP4ts/w1184-h666/Android-Lollipop-wallpapers-Google-Now-Wallpaper-2.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+}
+
+body,
+html { overflow: hidden; }
+
+.materialContainer {
+    -ms-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    left: 50%;
+    max-width: 460px;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+*,
+*:after,
+*::before {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    list-style-type: none;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-decoration: none;
+}

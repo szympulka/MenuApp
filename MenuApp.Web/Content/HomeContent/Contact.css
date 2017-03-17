@@ -1,0 +1,29 @@
+﻿.Contact {
+    width: 500px;
+    height: 500px;
+}
+.data {
+    
+}
+.message {
+    float: right;
+    padding-top: 32px;
+}
+#input-email {
+    height: 50px;
+}
+#input-name {
+    height: 50px;
+}
+.input-subject {
+    height: 50px;
+}
+#input-message {
+    
+    height: 200px;
+    width: 300px;
+}
+#input-submit {
+    width: 200px;
+    margin-left: 170px;
+}

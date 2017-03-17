@@ -1,0 +1,67 @@
+﻿@model PagedList.IPagedList<MenuApp.Core.Entities.Recipe>
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "ShowRecipes";
+}
+
+
+<head>
+    <link href="~/Content/MaterialKit/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        body {
+            background-color: #eeeeee;
+        }
+    </style>
+
+</head>
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Category</th>
+                <th>CategoryOfFood</th>
+                <th>HardLevel</th>
+                <th class="text-left;">IsActive</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Author)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CategoryOfFood)</td>
+                    <td>@Html.DisplayFor(modelItem => item.HardLevel)</td>
+                    <td><input type="checkbox" name="IsActive" disabled checked></td>
+                    <td class="td-actions text-right">
+                        <a href="DetailsRecipe/@item.Id">
+                            <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </button>
+                        </a>
+                        <a href="EditRecipe/@item.Id">
+                            <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                <i class="glyphicon glyphicon-edit"></i>
+                            </button>
+                        </a>
+                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+    Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+    @Html.PagedListPager(Model, page => Url.Action("Index","Home",
+    new { page, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+
+</body>

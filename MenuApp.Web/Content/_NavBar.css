@@ -1,0 +1,32 @@
+﻿body {
+    margin: 0 !important;
+    padding: 0 !important;   
+}
+
+.Top_Menu {
+    background-color: red;
+    height: 55px;
+    width: 100%;
+    background-color: transparent;
+}
+
+.logo {
+  
+    float: left;
+    padding: 15px;
+    width: 50%;
+}
+
+.menu {
+    float: left;
+    height: 50%;
+    padding: 15px;
+    text-align: right;
+    width: 40%;
+}
+
+.logo_photo {
+    width: 470px;
+    font-size: 57px;
+    float: left;
+}

@@ -1,0 +1,58 @@
+﻿@model MenuApp.Core.Entities.User
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width"/>
+    <title>Registration</title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900&subset=latin,latin-ext" rel="stylesheet"/>
+    <link href="~/Content/AuthorizationContent/Login.css" rel="stylesheet"/>
+
+    <script src="~/scripts/Login.js"></script>
+</head>
+<body>
+
+@using (Html.BeginForm("Registration", "Authorization", FormMethod.Post,
+    new {enctype = "multipart/form-data"}))
+{
+    <div class="materialContainer">
+        <div class="box">
+            <div style="text-align: center;">Registration</div>
+
+            <div class="input">
+                <label for="regname">Username</label>
+                <input type="text" name="UserName" id="regname">
+                <span class="spin"></span>
+            </div>
+
+            <div class="input">
+                <label for="regpass">Password</label>
+                <input type="password" name="Password" id="regpass">
+                <span class="spin"></span>
+            </div>
+
+            <div class="input">
+                <label for="regemail">Email</label>
+                <input type="text" name="Email" id="regemail">
+                <span class="spin"></span>
+            </div>
+
+
+            <div class="button login">
+                <button>
+                    <span>GO</span> <i class="fa fa-check"></i>
+                </button>
+            </div>
+            <div class="pass-forgot">@Html.ActionLink("Back to login", "Login")</div>
+
+        </div>
+    </div>
+}
+
+
+</body>
+</html>

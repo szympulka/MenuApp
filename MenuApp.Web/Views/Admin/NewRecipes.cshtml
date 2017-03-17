@@ -1,0 +1,52 @@
+﻿@model IEnumerable<MenuApp.Core.Entities.Recipe>
+
+
+<div class="text-center" style="color: #03a9f4">
+    <h2>Nowe Przepisy</h2>
+</div>
+<table class="table">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Title)</th>
+                <th>@Html.DisplayNameFor(model => model.Category)</th>
+                <th>@Html.DisplayNameFor(model => model.CategoryOfFood)</th>
+                <th>@Html.DisplayNameFor(model => model.DateAdded)</th>
+                <th class="text-left">@Html.DisplayNameFor(model => model.Author)</th>
+                <th class="text-right">@Html.DisplayNameFor(model => model.HardLevel)</th>
+                <th class="text-right" style="padding-right: 60px;">@Html.DisplayNameFor(model => model.IsActive)</th>
+
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tbody>
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Title)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Category)</td>
+                    <td>@Html.DisplayFor(modelItem => item.CategoryOfFood)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DateAdded.Date)</td>
+                    <td class="text-left">@Html.DisplayFor(modelItem => item.Author)</td>
+                    <td class="text-right">@Html.DisplayFor(modelItem => item.HardLevel)</td>
+                    <td class="text-right" style="padding-right: 60px;">@Html.DisplayFor(modelItem => item.IsActive)</td>
+                    <td class="td-actions text-right">
+                        <a href="~/Recipe/DetailsRecipe/@item.Id">
+                            <button type="button" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+                                <i class="glyphicon glyphicon-user"></i>
+                            </button>
+                        </a>
+                        <a href="~/Recipe/EditRecipe/@item.Id">
+                            <button type="button" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+                                <i class="glyphicon glyphicon-edit"></i>
+                            </button>
+                        </a>
+                        <a href="~/Recipe/DeleteRecipe/@item.Id">
+                        <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+                            <i class="glyphicon glyphicon-remove"></i>
+                        </button>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+            }
+
+        </table>

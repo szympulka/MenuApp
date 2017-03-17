@@ -1,0 +1,219 @@
+﻿body {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.burger {
+    display: inline-block;
+    cursor: pointer;
+    float: left;
+    padding: 3px 10px 0px 15px;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: #333;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+.section_info {
+    width: 100%;
+    height: 1000px;
+    background-color: rgba(188, 156, 126, 1);
+    position: absolute;
+}
+.change .bar1 {
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+/*//////////////////////////////////////////////*/
+
+.Breakfast1 {
+    background-image: url('img/breakfast.jpg');
+}
+
+.Breakfast2 {
+    background-image: url('img/breakfast2.jpg');
+}
+
+.Breakfast3 {
+    background-image: url('img/breakfast3.jpg');
+}
+
+.Coffe1 {
+    background-image: url('img/coffee.jpg');
+}
+
+.Coffe2 {
+    background-image: url('img/coffee2.jpg');
+}
+
+.Coffe3 {
+    background-image: url('img/coffee3.jpg');
+}
+
+.Dinner1 {
+    background-image: url('img/dinner1.jpg');
+}
+
+.Dinner2 {
+    background-image: url('img/dinner2.jpg');
+}
+
+.Dinner3 {
+    background-image: url('img/dinner3.png');
+}
+
+.Lunch1 {
+}
+
+.Lunch2 {
+    background-image: url('img/lunch2.jpg');
+}
+
+.Lunch3 {
+}
+
+.DayName {
+    font-family: 'Pacifico', cursive;
+    font-size: 70px;
+    width: 300px;
+    height: 85vh;
+}
+
+    .DayName div {
+        margin-top: -100px;
+    }
+
+.burger-menu p {
+    background-color: rgba(188, 156, 126, 0.5);
+    text-align: center;
+}
+
+.burger-menu {
+    width: 200px;
+    height: 90vh;
+    font-size: 40px;
+    padding-top: 50px;
+}
+
+.find_section {
+    padding-top:15px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+}
+
+.find_box {
+    margin-left: auto;
+    margin-right: auto;
+    height: 80%;
+    width: 80%;
+
+}
+
+    .find_box input {
+        height: 60px;
+        width: 100%;
+        border: none;
+        font-size: 50px;
+        border-bottom: 2px solid red;
+        text-align: center;
+        background-color: rgba(188, 156, 126, 1);
+        background-image: url('img/search.png');
+        background-repeat: no-repeat;
+        color:white;
+    }
+
+    .find_box button {
+        height: 50px;
+        width: 170px;
+        border-radius: 42px;
+        border: 1px solid red;
+        cursor:pointer;
+        margin-top: 5px;
+        font-size: 30px;
+        background-color: initial;
+    }
+
+    .find_box div {
+        height: 50px;
+        width: 170px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+button:hover {
+    background-color: #9e7c5b;
+}
+section.module.parallax {
+    height: 100vh;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.navBar {
+    min-height: 44px;
+    height: 5vh;
+    width: 100%;
+    background-color: rgba(188, 156, 126, 0.5);
+}
+
+.logo {
+    padding-top: 6px;
+    font-size: 30px;
+    width: 20%;
+    float: left
+}
+
+.login-bar {
+    float: right;
+    width: 30%;
+    height: 5vh;
+}
+
+.login {
+    height: 55px;
+    width: 70px;
+    float: right;
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+.links {
+    font-size: 20px;
+    padding-top: 5px;
+}
+
+.category-menu
+{
+    width:100%;
+    font-size: 50px;
+    color:white;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:center;
+}
+.category-menu-items{
+    width:80%;
+    margin-left:auto;
+    margin-right:auto;
+    height:500px;
+}
+.category-menu-items div {
+    font-size:50px;
+    float:left;
+    height:50px;
+
+    padding: 0 7px 7px 0 ;
+}

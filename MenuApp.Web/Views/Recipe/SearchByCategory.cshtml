@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MenuApp.Core.Entities.Recipe>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SearchByCategory</title>
+    <link href="~/Content/RecipeContent/SearchByCategory.css" rel="stylesheet" />
+</head>
+<body>
+    @foreach(var item in Model)
+    {
+        <div class="Recipe">
+            <img src="https://menusite.blob.core.windows.net/menusite/@item.Title" class="Photo" />
+            <div class="Title"> <h1>@item.Title</h1></div>
+            <div class="DescriptionInfo">
+                <div class="Hard_Level">asd</div>
+                <div class="ShortDescription"></div>@item.ShortDescription
+            </div>
+            <div style="clear:both;"></div>
+            <div class="Recipe_Info">CountComment:@item.Comments.Count()
+                <div class="Button_toRecipe">
+                    <div class="Likes"><h5>Like: @item.RecipeLikes</h5></div>
+                    <div class="UnLikes"><h5> DisLike:@item.RecipeDisLikes</h5></div>
+                    <div class="More">
+                        <a href="DetailsRecipe/@item.Id">MORE</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    }
+
+</body>
+</html>
