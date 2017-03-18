@@ -200,7 +200,15 @@
   <ItemGroup>
     <Content Include="Content\AdminContent\AdminPanel.css" />
     <Content Include="Content\AuthorizationContent\Login.css" />
-    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\Commons\bootstrap\bootstrap-theme.css" />
+    <Content Include="Content\Commons\bootstrap\bootstrap-theme.min.css" />
+    <Content Include="Content\Commons\bootstrap\bootstrap.css" />
+    <Content Include="Content\Commons\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\Commons\css3Animate\css\animations-ie-fix.css" />
+    <Content Include="Content\Commons\css3Animate\css\animations.css" />
+    <Content Include="Content\Commons\css3Animate\example-assets\img\bg_header.jpg" />
+    <Content Include="Content\Commons\css3Animate\example-assets\style.css" />
+    <Content Include="Content\Commons\css3Animate\js\css3-animate-it.js" />
     <Content Include="Content\HomeContent\Contact.css" />
     <Content Include="Content\HomeContent\img\breakfast.jpg" />
     <Content Include="Content\HomeContent\img\breakfast2.jpg" />
@@ -214,76 +222,68 @@
     <Content Include="Content\HomeContent\img\lunch2.jpg" />
     <Content Include="Content\HomeContent\img\search.png" />
     <Content Include="Content\HomeContent\Index.css" />
-    <Content Include="Content\MaterialKit\css\bootstrap.min.css" />
-    <Content Include="Content\MaterialKit\css\demo.css" />
-    <Content Include="Content\MaterialKit\css\material-kit.css" />
-    <Content Include="Content\MaterialKit\js\bootstrap-datepicker.js" />
-    <Content Include="Content\MaterialKit\js\bootstrap.min.js" />
-    <Content Include="Content\MaterialKit\js\jquery.min.js" />
-    <Content Include="Content\MaterialKit\js\material-kit.js" />
-    <Content Include="Content\MaterialKit\js\material.min.js" />
-    <Content Include="Content\MaterialKit\js\nouislider.min.js" />
     <Content Include="Content\PagedList.css" />
     <Content Include="Content\RecipeContent\AddRecipe.css" />
     <Content Include="Content\RecipeContent\DetailsRecipe.css" />
     <Content Include="Content\RecipeContent\SearchByCategory.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Content\_NavBar.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="scripts\Admin\Admin.js" />
     <Content Include="App_Data\client_secret_92158954615-7lg40etg0d6trtrvsjk0iiod92pfpfor.apps.googleusercontent.com.json" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Commons\bootstrap\bootstrap.min.css.map" />
+    <Content Include="Content\Commons\bootstrap\bootstrap.css.map" />
+    <Content Include="Content\Commons\bootstrap\bootstrap-theme.min.css.map" />
+    <Content Include="Content\Commons\bootstrap\bootstrap-theme.css.map" />
+    <Content Include="Content\Commons\css3Animate\css3-animate-it.jquery.json" />
+    <Content Include="Content\Commons\css3Animate\less\animations.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\bounce-in.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\bounce-out.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\fade-in-short.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\fade-in.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\fade-out.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\flip-in.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\flip-out.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\grow.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\light-speed-in.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\light-speed-out.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\pulse.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\roll-in.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\roll-out.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\rotate-in.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\rotate-out.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\shake.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\swing.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\tada.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\wiggle.less" />
+    <Content Include="Content\Commons\css3Animate\less\animations\wobble.less" />
+    <Content Include="Content\Commons\css3Animate\less\mixins\animation.less" />
+    <Content Include="Content\Commons\css3Animate\less\mixins\opacity.less" />
+    <Content Include="Content\Commons\css3Animate\less\mixins\perspective.less" />
+    <Content Include="Content\Commons\css3Animate\less\mixins\rotate.less" />
+    <Content Include="Content\Commons\css3Animate\less\mixins\scale.less" />
+    <Content Include="Content\Commons\css3Animate\less\mixins\skew.less" />
+    <Content Include="Content\Commons\css3Animate\less\mixins\transform.less" />
+    <Content Include="Content\Commons\css3Animate\less\mixins\transition.less" />
+    <Content Include="Content\Commons\css3Animate\less\mixins\translate.less" />
+    <Content Include="Content\Commons\css3Animate\less\mixins\visibility.less" />
     <None Include="Properties\PublishProfiles\yourrecipes - Web Deploy.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Content Include="Content\MaterialKit\css\material-kit.css.map" />
-    <Content Include="Content\MaterialKit\sass\material-kit.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\plugins\_plugin-datepicker.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\plugins\_plugin-dropdownjs.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\plugins\_plugin-nouislider.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\plugins\_plugin-selectize.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\plugins\_plugin-snackbarjs.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_alerts.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_buttons.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_cards.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_carousel.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_checkboxes.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_colors.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_core.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_dialogs.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_dividers.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_dropdown.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_example-pages.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_footers.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_form.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_images.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_import-bs-less.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_import-bs-sass.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_info-areas.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_inputs-size.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_inputs.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_labels.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_lists.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_mixins.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_navbar.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_pagination.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_panels.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_pills.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_popups.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_progress.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_radios.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_ripples.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_sections.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_shadows.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_tabs.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_togglebutton.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_typography.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_variables.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_variables_bootstrap.scss" />
-    <Content Include="Content\MaterialKit\sass\material-kit\_welljumbo.scss" />
+    <Content Include="scripts\bootstrap.js" />
+    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\Commons\AjaxCommons.js" />
     <Content Include="scripts\Home\Home.js" />
+    <None Include="scripts\jquery-1.9.1.intellisense.js" />
+    <Content Include="scripts\jquery-1.9.1.js" />
+    <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="scripts\jquery-3.1.1.min.js" />
     <Content Include="scripts\Recipe\AddRecipe.js" />
     <Content Include="scripts\Recipe\DetailsRecipe.js" />
@@ -361,6 +361,7 @@
     <Content Include="Views\Recipe\AddRecipeComment.cshtml" />
     <Content Include="Views\Home\Breakfast1.cshtml" />
     <Content Include="Views\Recipe\BreakfastMenuShow.cshtml" />
+    <Content Include="scripts\jquery-1.9.1.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -369,8 +370,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Commons\" />
-    <Folder Include="fonts\" />
     <Folder Include="Views\Account\" />
   </ItemGroup>
   <ItemGroup>
