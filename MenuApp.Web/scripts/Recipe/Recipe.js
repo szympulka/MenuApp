@@ -1,7 +1,7 @@
-﻿var inputNumber = 4;
+﻿var inputNumber = 3
 function AddComponent() {
     
-    $('#AddComponent').append('<input name="Components['+inputNumber+'].Name" type="text" />');
+    $('#AddComponent').append('<input name="Components['+inputNumber+']" type="text" />');
     inputNumber++;
 }
 $(document).ready(function ()

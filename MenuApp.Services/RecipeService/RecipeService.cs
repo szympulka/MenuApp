@@ -55,6 +55,10 @@ namespace MenuApp.Services.RecipeService
             }
             foreach (var p in recipe.Components)
             {
+                if(string.IsNullOrEmpty(p))
+                {
+                    continue;
+                }
                 var compsobj = new Component();
                 compsobj.Name = p;
                 var component = _dataContext.All<Component>().FirstOrDefault(x => x.Name == p);
