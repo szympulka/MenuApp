@@ -60,18 +60,11 @@
     <Compile Include="DataContext.cs" />
     <Compile Include="Entities\Log.cs" />
     <Compile Include="Entities\Newsletter.cs" />
+    <Compile Include="Entities\RecipeCategory.cs" />
     <Compile Include="Entities\RecipeLike.cs" />
     <Compile Include="IDataContext.cs" />
     <Compile Include="Entities\Recipe.cs" />
     <Compile Include="Entities\User.cs" />
-    <Compile Include="Migrations\201702262036223_first.cs" />
-    <Compile Include="Migrations\201702262036223_first.Designer.cs">
-      <DependentUpon>201702262036223_first.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201703011909265_Logons.cs" />
-    <Compile Include="Migrations\201703011909265_Logons.Designer.cs">
-      <DependentUpon>201703011909265_Logons.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,14 +78,6 @@
       <Project>{87510a13-f9ae-48d0-91f5-69e31ee067f5}</Project>
       <Name>MenuApp.Common</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201702262036223_first.resx">
-      <DependentUpon>201702262036223_first.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201703011909265_Logons.resx">
-      <DependentUpon>201703011909265_Logons.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

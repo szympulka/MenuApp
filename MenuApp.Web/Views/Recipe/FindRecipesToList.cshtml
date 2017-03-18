@@ -19,7 +19,7 @@
             @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Category)
+            @Html.DisplayNameFor(model => model.RecipeCategories.FoodCateogry)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.PreparationTime)
@@ -46,7 +46,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Category)
+                @Html.DisplayFor(modelItem => item.RecipeCategories.FoodCateogry)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PreparationTime)

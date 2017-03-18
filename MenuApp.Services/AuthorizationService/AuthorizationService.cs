@@ -3,10 +3,8 @@ using MenuApp.Core.Entities;
 using MenuApp.Services.Models.UserModel;
 using MenuApp.Common.Helpers;
 using System.Web.Security;
-using MenuApp.Services.BigDataService;
 using MenuApp.Services.Fakes.MailService;
 using MenuApp.Services.UserService;
-using MenuApp.Services.MailService;
 
 namespace MenuApp.Services.AuthorizationService
 {

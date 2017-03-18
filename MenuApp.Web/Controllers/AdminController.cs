@@ -109,5 +109,9 @@ namespace MenuApp.Web.Controllers
             return Json(_questionService.ShowDetailsQuestion(id), JsonRequestBehavior.AllowGet);
         }
 
+        public ActionResult NewUnacceptedRecipesCategory()
+        {
+            return View(_recipeService.NewUnacceptedRecipesCategory());
+        }
     }
 }

@@ -20,6 +20,11 @@ namespace MenuApp.Services.RecipeService
         public void AddRecipe(AddRecipeModel recipe, HttpPostedFileBase file)
         {
             var date = new DateTimeHelper();
+
+            var recipeCategory = _dataContext.All<RecipeCategory>().
+                FirstOrDefault(x => x.Cuisine == recipe.Cuisine 
+                && x.FoodCateogry == recipe.FoodCategory);
+
             var Recipe = new Recipe()
             {
                 Author = UserHelper.UserName(),
@@ -28,17 +33,47 @@ namespace MenuApp.Services.RecipeService
                 Title = recipe.Title,
                 Description = recipe.Description,
                 ShortDescription = recipe.ShortDescription,
-                Category = recipe.Category,
-                CategoryOfFood = recipe.CategoryOfFood,
                 PreparationTime = recipe.PreparationTime,
                 HardLevel = recipe.HardLevel,
-
             };
-
-            _dataContext.Add<Recipe>(Recipe);
+            if (recipeCategory != null)
+            {
+                Recipe.CategoryId = recipeCategory.Id;
+            }
+            else
+            {
+                Recipe.IsActive = false;
+                var categoryRecipe = new RecipeCategory()
+                {
+                    ActiveCategory = false,
+                    Cuisine = recipe.Cuisine,
+                    FoodCateogry = recipe.FoodCategory
+                };
+                _dataContext.Add<RecipeCategory>(categoryRecipe);
+                Recipe.CategoryId = categoryRecipe.Id;
+                Recipe.IsActive = false;
+            }
+            foreach (var p in recipe.Components)
+            {
+                var compsobj = new Component();
+                compsobj.Name = p;
+                var component = _dataContext.All<Component>().FirstOrDefault(x => x.Name == p);
+                if(component == null)
+                {
+                    _dataContext.Add<Recipe>(Recipe);
+                    _dataContext.Add<Component>(compsobj);
+                    Recipe.Components.Add(compsobj);
+                }
+                else
+                {
+                    Recipe.Components.Add(component);
+                }
+            }
             _dataContext.SaveChanges();
             FileAzureUploaderHelper.UploadPhoto(recipe.Title, file);
         }
+
+
         public bool EditRecipe(EditeRecipeModel editRecipe)
         {
             if (string.IsNullOrEmpty(editRecipe.Title) && string.IsNullOrEmpty(editRecipe.Category) &&
@@ -55,7 +90,7 @@ namespace MenuApp.Services.RecipeService
             }
             if (!string.IsNullOrEmpty(editRecipe.Category))
             {
-                model.Category = editRecipe.Category;
+                model.RecipeCategories.FoodCateogry = editRecipe.Category;
             }
             if (editRecipe.PreparationTime != null)
             {
@@ -63,7 +98,7 @@ namespace MenuApp.Services.RecipeService
             }
             if (editRecipe.CategoryOfFood != null)
             {
-                model.CategoryOfFood = editRecipe.CategoryOfFood;
+                model.RecipeCategories.Cuisine = editRecipe.CategoryOfFood;
             }
             //drop-down list edit
             model.IsActive = editRecipe.IsActive;
@@ -74,8 +109,8 @@ namespace MenuApp.Services.RecipeService
         {
             var model = _dataContext.All<Recipe>().AsQueryable();
             model = _dataContext.All<Recipe>().Where(
-                x => x.Author == component || x.HardLevel == component || x.Category == component ||
-                x.CategoryOfFood == component || x.Title == component);
+                x => x.Author == component || x.HardLevel == component || x.RecipeCategories.Cuisine == component ||
+                x.RecipeCategories.FoodCateogry == component || x.Title == component);
             return model.ToList();
 
         }
@@ -110,8 +145,8 @@ namespace MenuApp.Services.RecipeService
 
         public List<Recipe> SearchByCategory(string category, string categoryOfFOod)
         {
-            var model = _dataContext.All<Recipe>().Where(x => x.Category == category);
-            if (!string.IsNullOrEmpty(categoryOfFOod)) model = model.Where(y => y.CategoryOfFood == categoryOfFOod);
+            var model = _dataContext.All<Recipe>().Where(x => x.RecipeCategories.Cuisine == category);
+            if (!string.IsNullOrEmpty(categoryOfFOod)) model = model.Where(y => y.RecipeCategories.FoodCateogry == categoryOfFOod);
             return model.ToList();
         }
 
@@ -123,7 +158,7 @@ namespace MenuApp.Services.RecipeService
 
         public Dictionary<string, IEnumerable<string>> MenuShow()
         {
-            return _dataContext.All<Recipe>().GroupBy(x => x.Category).ToDictionary(y => y.Key, y => y.Select(z => z.CategoryOfFood).Distinct());
+            return _dataContext.All<Recipe>().GroupBy(x => x.RecipeCategories.FoodCateogry).ToDictionary(y => y.Key, y => y.Select(z => z.RecipeCategories.Cuisine).Distinct());
         }
 
         public void AddLike(int id)
@@ -161,9 +196,9 @@ namespace MenuApp.Services.RecipeService
             return recipeName != null ? "True" : "False";
         }
 
-        public List<Recipe> BreakfastMenuShow()
+        public List<RecipeCategory> NewUnacceptedRecipesCategory()
         {
-            return _dataContext.All<Recipe>().Where(x => x.CategoryOfFood == "Breakfast").Distinct().ToList();
+            return _dataContext.All<RecipeCategory>().Where(x => x.ActiveCategory == false).ToList();
         }
     }
 }

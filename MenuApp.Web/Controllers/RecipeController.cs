@@ -1,14 +1,9 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using MenuApp.Services.Models.RecipeModel;
 using MenuApp.Services.RecipeService;
-using MenuApp.Core.Entities;
 using System.Web;
-using System.Web.Http.Routing.Constraints;
 using MenuApp.Common.Helpers;
-using MenuApp.Core;
 using MenuApp.Services.Models;
-using MenuWeb.Core.Entities;
 using PagedList;
 
 namespace MenuApp.Web.Controllers
@@ -84,10 +79,6 @@ namespace MenuApp.Web.Controllers
         public ActionResult MenuShow()
         {
             return View(_recipeService.MenuShow());
-        }
-        public ActionResult BreakfastMenuShow()
-        {
-            return View(_recipeService.BreakfastMenuShow());
         }
         public ActionResult RandomRecipe()
         {

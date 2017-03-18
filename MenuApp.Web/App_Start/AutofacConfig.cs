@@ -12,7 +12,6 @@ using MenuApp.Services.AuthorizationService;
 using MenuApp.Services.BigDataService;
 using MenuApp.Services.Fakes.MailService;
 using MenuApp.Services.LogService;
-using MenuApp.Services.MailService;
 using MenuApp.Services.HomeService;
 
 

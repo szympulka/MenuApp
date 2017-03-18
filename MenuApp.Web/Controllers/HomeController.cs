@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using System.Web.Mvc;
 using MenuApp.Services.QuestionService;
 using MenuApp.Core.Entities;
@@ -130,6 +129,9 @@ namespace MenuApp.Web.Controllers
             }
             return View();
         }
-
+        public ActionResult MenuShow(string foodCateogry)
+        {
+            return View(_homeSerivce.FoodCateogry(foodCateogry));
+        }
     }
 }

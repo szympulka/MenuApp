@@ -1,0 +1,13 @@
+﻿@model IEnumerable<MenuWeb.Core.Entities.RecipeCategory>
+
+
+@foreach (var item in Model)
+{
+    <div>
+
+        <div>
+            <img src="~/Content/HomeContent/img/symbols.png" width="33" height="33" />
+            @item.Cuisine
+        </div>
+    </div>
+}

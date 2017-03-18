@@ -3,6 +3,7 @@ using MenuApp.Services.Models.RecipeModel;
 using System.Collections.Generic;
 using System.Web;
 using MenuApp.Services.Models;
+using MenuWeb.Core.Entities;
 
 namespace MenuApp.Services.RecipeService
 {
@@ -20,11 +21,11 @@ namespace MenuApp.Services.RecipeService
         List<Recipe> SearchByCategory(string category, string categoryOfFOod);
         int RandomRecipe();
         Dictionary<string, IEnumerable<string>> MenuShow();
-        List<Recipe> BreakfastMenuShow();
         void AddLike(int id);
         void RemoveLike(int id, string userName);
         bool UsersLikeRecipe(int id);
         string CheckRecipeTitleExist(string title);
+        List<RecipeCategory> NewUnacceptedRecipesCategory();
 
     }
 }

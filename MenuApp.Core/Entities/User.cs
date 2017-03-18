@@ -1,7 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using MenuWeb.Core.Entities;
 
 namespace MenuApp.Core.Entities
 {

@@ -16,6 +16,7 @@ namespace MenuApp.Core
         public DbSet<Log> Logs { get; set; }
         public DbSet<RecipeLike> RecipeLikes { get; set; }
         public DbSet<Comment> Comments { get; set; }
+        public DbSet<RecipeCategory> RecipeCategories { get; set; }
         //big data
         public DbSet<Logon> Logons { get; set; }
 
@@ -35,10 +36,10 @@ namespace MenuApp.Core
             return Set<T>();
         }
 
-        //public T Attach<T>(T entry) where T : class
-        //{
-        //    return Set<T>().
-        //}
+        public T Attach<T>(T entry) where T : class
+        {
+            return Set<T>().Add(entry);
+        }
 
         public T Find<T>(params object[] keys) where T : class
         {

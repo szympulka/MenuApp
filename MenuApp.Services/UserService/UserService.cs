@@ -4,7 +4,6 @@ using System.Linq;
 using MenuApp.Common.Helpers;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System;
 
 namespace MenuApp.Services.UserService
 

@@ -22,13 +22,7 @@ namespace MenuApp.Core.Entities
 
         public string Description { get; set; }
         public string ShortDescription { get; set; }
-
-        [Required(ErrorMessage = "Title is required")]
-        public string Category { get; set; }
-        public string CategoryOfFood { get; set; }
-
         public int? PreparationTime { get; set; }
-
         [Column(TypeName = "date")]
         public DateTime DateAdded { get; set; }
         public int RecipeLikes { get; set; }
@@ -37,8 +31,14 @@ namespace MenuApp.Core.Entities
         public bool IsActive { get; set; }
         public string HardLevel { get; set; }
         public int Views { get; set; }
+
+        public int CategoryId { get; set; }
+
         
         public virtual ICollection<Component> Components { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
+
+        [ForeignKey("CategoryId")]
+        public virtual RecipeCategory RecipeCategories { get; set; }
     }
 }

@@ -204,7 +204,7 @@ section.module.parallax {
 
 .category-menu {
     width: 100%;
-    font-size: 50px;
+    font-size: 78px;
     color: white;
     margin-left: auto;
     margin-right: auto;
@@ -218,14 +218,14 @@ section.module.parallax {
     margin-right: auto;
     height: 500px;
     min-width: 825px;
-    padding-left: 17%;
 }
 
     .category-menu-items div {
         font-size: 50px;
         float: left;
-        height: 60px;
-        width: 30%;
+        height: 80px;
+        min-width: 350px;
+        width: auto;
         padding: 2px 7px 7px 5px;
     }
 
@@ -234,30 +234,33 @@ section.module.parallax {
     visibility: hidden;
     transition: 0.7s;
 }
-.show_panel{
-    opacity:1;
+
+.show_panel {
+    opacity: 1;
     transition: 0.7s;
 }
+
 .one {
     -webkit-transform: rotate(35deg);
     -moz-transform: rotate(35deg);
     background: red;
-    opacity: 0.3;
-    position:absolute;
-    height:100px;
+    opacity: 0.5;
+    position: absolute;
+    height: 100px;
     width: 2900px;
 }
+
 .two {
     -webkit-transform: rotate(145deg);
     -moz-transform: rotate(145deg);
     background: red;
-    opacity: 0.3;
+    opacity: 0.5;
     position: absolute;
     height: 100px;
     width: 2000px;
 }
-.center-div
-{
-    margin-left:auto;
-    margin-right:auto;
+
+.center-div {
+    margin-left: auto;
+    margin-right: auto;
 }

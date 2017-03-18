@@ -1,5 +1,4 @@
-﻿using System;
-using System.Web;
+﻿using System.Web;
 using MenuApp.Common.Helpers;
 using MenuApp.Core.Entities;
 using MenuWeb.Core.Entities.BigData;

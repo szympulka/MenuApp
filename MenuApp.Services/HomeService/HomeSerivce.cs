@@ -1,14 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using MenuApp.Common.Helpers;
+using MenuWeb.Core.Entities;
+using MenuApp.Core.Entities;
+using System.Linq;
 
 namespace MenuApp.Services.HomeService
 {
-    public class HomeSerivce: IHomeSerivce
+    public class HomeSerivce : BaseService, IHomeSerivce
     {
+        public HomeSerivce(IDataContext dataContext) : base(dataContext)
+        {
+
+        }
+
+        public List<RecipeCategory> FoodCateogry(string foodCateogry)
+        {
+            return _dataContext.All<RecipeCategory>().Where(x => x.FoodCateogry == foodCateogry && x.ActiveCategory).Distinct().ToList();
+        }
+
         public string TimeOfDay()
         {
             var date = new DateTimeHelper();

@@ -9,7 +9,7 @@ namespace MenuWeb.Core.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(MenuApp.Core.DataContext context)
