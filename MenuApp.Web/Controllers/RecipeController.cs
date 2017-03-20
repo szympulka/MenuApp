@@ -60,10 +60,7 @@ namespace MenuApp.Web.Controllers
             {
                 return View("ShowRecipes");
             }
-            var detRecipe = new DetailRecipe();
-            detRecipe.UsersLikeRecipe = _recipeService.UsersLikeRecipe(id);
-            detRecipe.Recipe = _recipeService.DetailRecipe(id);
-            return View(detRecipe);
+            return View(_recipeService.DetailsRecipe(id));
         }
 
         public ActionResult BestFiveRecipes()
@@ -105,71 +102,5 @@ namespace MenuApp.Web.Controllers
             return _recipeService.CheckRecipeTitleExist(title);
         }
     }
-
-    //public ActionResult AdvancedSearch(List<string> component)
-    //{
-    //    if (component != null)
-    //    {
-    //        SortedDictionary<int, int> recipes = new SortedDictionary<int, int>();
-    //        List<Recipe> recipesList = new List<Recipe>();
-
-
-
-    //        foreach (var item in component)
-    //        {
-
-    //            var components = db.Components.Where(x => x.Name == item).Include(c => c.Recipes).ToList();
-    //            foreach (var model in components)
-    //            {
-    //                int recipeId = model.Recipes.Select(x => x.Id).SingleOrDefault();
-    //                if (recipes.ContainsKey(recipeId))
-    //                {
-    //                    recipes[recipeId]++;
-    //                }
-    //                else
-    //                {
-    //                    recipes.Add(recipeId, 1);
-
-    //                }
-    //            }
-    //        }
-    //        foreach (var recipeKey in recipes)
-    //        {
-    //            recipesList.Add(db.Recipes.FirstOrDefault(x => x.Id == recipeKey.Key));
-    //        }
-
-    //        return View("AdvancedSearchResoult", recipesList);
-    //    }
-    //    return View();
-    //}
-
-    //public ActionResult AdvancedSearch(List<string> components)
-    //{
-    //    if (components == null) return View();
-
-    //    var response = new List<AdvanceSearchViewModel>();
-    //    var result = new AdvanceSearchViewModel();
-
-    //    for (var i = 0; i < components.Count(); i++)
-    //    {
-    //        var recipes = db.Recipes.AsQueryable();
-
-    //        foreach (var component in components)
-    //        {
-    //            recipes = recipes.Where(r => r.Components.Any(c => c.Name == component));
-
-    //            if (recipes.Count() > 0)
-    //                result = new AdvanceSearchViewModel() { Recipes = recipes.ToList(), ComponentsMatched = i };
-    //            else break;
-    //        }
-
-    //        response.Add(result);
-    //    }
-
-    //    return View("AdvancedSearchResoult", response.ToList());
-
-
-    //}
-
 
 }

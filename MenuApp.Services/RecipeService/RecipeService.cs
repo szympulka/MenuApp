@@ -50,27 +50,29 @@ namespace MenuApp.Services.RecipeService
                     FoodCateogry = recipe.FoodCategory
                 };
                 _dataContext.Add<RecipeCategory>(categoryRecipe);
-                Recipe.CategoryId = categoryRecipe.Id;
-                Recipe.IsActive = false;
+                Recipe.CategoryId = categoryRecipe.Id;               
             }
-            foreach (var p in recipe.Components)
+
+
+
+            foreach (var p in recipe.RecipeComponents)
             {
-                if(string.IsNullOrEmpty(p))
+                if (string.IsNullOrEmpty(p))
                 {
                     continue;
                 }
-                var compsobj = new Component();
+                var compsobj = new RecipeComponent();
                 compsobj.Name = p;
-                var component = _dataContext.All<Component>().FirstOrDefault(x => x.Name == p);
-                if(component == null)
+                var component = _dataContext.All<RecipeComponent>().FirstOrDefault(x => x.Name == p);
+                if (component == null)
                 {
                     _dataContext.Add<Recipe>(Recipe);
-                    _dataContext.Add<Component>(compsobj);
-                    Recipe.Components.Add(compsobj);
+                    _dataContext.Add<RecipeComponent>(compsobj);
+                    Recipe.RecipeComponents.Add(compsobj);
                 }
                 else
                 {
-                    Recipe.Components.Add(component);
+                    Recipe.RecipeComponents.Add(component);
                 }
             }
             _dataContext.SaveChanges();
@@ -203,6 +205,26 @@ namespace MenuApp.Services.RecipeService
         public List<RecipeCategory> NewUnacceptedRecipesCategory()
         {
             return _dataContext.All<RecipeCategory>().Where(x => x.ActiveCategory == false).ToList();
+        }
+
+        public DetailRecipeModel DetailsRecipe(int id)
+        {
+            var recipe = _dataContext.All<Recipe>().FirstOrDefault(x => x.Id == id);
+            if (recipe == null) return null;
+            var detail = new DetailRecipeModel()
+            {
+                Title = recipe.Title,
+                Views = recipe.Views,
+                Author = recipe.Author,
+                RecipeDisLikes = recipe.RecipeDisLikes,
+                RecipeLikes = recipe.RecipeLikes,
+                Description = recipe.Description,
+                DateAdded = recipe.DateAdded,
+                HardLevel = recipe.HardLevel,
+                PreparationTime = recipe.PreparationTime
+            };
+
+            return null;
         }
     }
 }

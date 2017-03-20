@@ -3,9 +3,9 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MenuApp.Core.Entities
 {
-    public class Component
+    public class RecipeComponent
     {
-        public Component()
+        public RecipeComponent()
         {
             this.Recipes = new HashSet<Recipe>();
         }

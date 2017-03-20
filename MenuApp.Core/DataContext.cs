@@ -11,7 +11,7 @@ namespace MenuApp.Core
         public DbSet<Recipe> Recipes { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Contact> Contacts { get; set; }
-        public DbSet<Component> Components { get; set; }
+        public DbSet<RecipeComponent> RecipeComponents { get; set; }
         public DbSet<Newsletter> Newsletters { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<RecipeLike> RecipeLikes { get; set; }

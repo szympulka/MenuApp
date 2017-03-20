@@ -26,6 +26,6 @@ namespace MenuApp.Services.RecipeService
         bool UsersLikeRecipe(int id);
         string CheckRecipeTitleExist(string title);
         List<RecipeCategory> NewUnacceptedRecipesCategory();
-
+        DetailRecipeModel DetailsRecipe(int id);
     }
 }

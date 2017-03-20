@@ -112,7 +112,7 @@
     <Compile Include="MailService\MailService.cs" />
     <Compile Include="Models\RecipeModel\AddRecipeModel.cs" />
     <Compile Include="Models\RecipeModel\AdvanceSearchViewModel.cs" />
-    <Compile Include="Models\RecipeModel\DetailRecipe.cs" />
+    <Compile Include="Models\RecipeModel\DetailRecipeModel.cs" />
     <Compile Include="Models\UserModel\ChangePasswordModel.cs" />
     <Compile Include="Models\RecipeModel\EditeRecipeModel.cs" />
     <Compile Include="Models\UserModel\EditUserModel.cs" />

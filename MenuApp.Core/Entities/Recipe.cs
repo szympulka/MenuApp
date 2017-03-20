@@ -14,7 +14,7 @@ namespace MenuApp.Core.Entities
 
         public Recipe()
         {
-            this.Components = new HashSet<Component>();
+            this.RecipeComponents = new HashSet<RecipeComponent>();
         }
         [Required(ErrorMessage = "Title is required")]
         [StringLength(50, ErrorMessage = "Max 20 characters")]
@@ -31,11 +31,10 @@ namespace MenuApp.Core.Entities
         public bool IsActive { get; set; }
         public string HardLevel { get; set; }
         public int Views { get; set; }
-
         public int CategoryId { get; set; }
 
         
-        public virtual ICollection<Component> Components { get; set; }
+        public virtual ICollection<RecipeComponent> RecipeComponents { get; set; }
         public virtual ICollection<Comment> Comments { get; set; }
 
         [ForeignKey("CategoryId")]

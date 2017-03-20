@@ -55,7 +55,7 @@
   <ItemGroup>
     <Compile Include="Entities\BigData\Logon.cs" />
     <Compile Include="Entities\Comment.cs" />
-    <Compile Include="Entities\Component.cs" />
+    <Compile Include="Entities\RecipeComponent.cs" />
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="DataContext.cs" />
     <Compile Include="Entities\Log.cs" />
