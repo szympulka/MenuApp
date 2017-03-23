@@ -10,7 +10,7 @@ namespace MenuApp.Services.UserService
         List<User> FindUsers(string user);
         User FindUser(int id);
         bool ValidateUser(LoginUserModel userModel);
-        string UserRole(string userRole);
+        string UserRole(string userName);
         bool IsAdmin(string userName);
         List<User> ShowUsers();
         void SubstitutionActive(int id);

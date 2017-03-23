@@ -4,7 +4,7 @@
 }
 
 .burger {
-    display: inline-block;
+    /*display: inline-block;*/
     cursor: pointer;
     float: left;
     padding: 3px 10px 0px 15px;
@@ -75,15 +75,13 @@
     background-image: url('img/dinner3.png');
 }
 
-.Lunch1 {
-}
+
 
 .Lunch2 {
     background-image: url('img/lunch2.jpg');
 }
 
-.Lunch3 {
-}
+
 
 .DayName {
     font-family: 'Pacifico', cursive;
@@ -220,7 +218,7 @@ section.module.parallax {
     min-width: 825px;
 }
 
-    .category-menu-items div {
+    .category-menu-items .MenuShow {
         font-size: 50px;
         float: left;
         height: 80px;
@@ -240,27 +238,26 @@ section.module.parallax {
     transition: 0.7s;
 }
 
-.one {
-    -webkit-transform: rotate(35deg);
-    -moz-transform: rotate(35deg);
-    background: red;
-    opacity: 0.5;
-    position: absolute;
-    height: 100px;
-    width: 2900px;
-}
-
-.two {
-    -webkit-transform: rotate(145deg);
-    -moz-transform: rotate(145deg);
-    background: red;
-    opacity: 0.5;
-    position: absolute;
-    height: 100px;
-    width: 2000px;
-}
-
 .center-div {
     margin-left: auto;
     margin-right: auto;
+}
+
+.MenuShow span :hover{
+   cursor:pointer;
+}
+.best-recipes {
+    height: 200px;
+    width: auto;
+    background-color: #907256;
+    display: block;
+    position: relative;
+    min-height: 500px;
+}
+
+
+.move {
+    transition: 2s;
+}
+.helpClass {
 }

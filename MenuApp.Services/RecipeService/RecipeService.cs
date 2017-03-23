@@ -75,6 +75,7 @@ namespace MenuApp.Services.RecipeService
                     Recipe.RecipeComponents.Add(component);
                 }
             }
+
             _dataContext.SaveChanges();
             FileAzureUploaderHelper.UploadPhoto(recipe.Title, file);
         }

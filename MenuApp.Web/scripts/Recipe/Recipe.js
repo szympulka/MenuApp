@@ -1,7 +1,7 @@
 ﻿var inputNumber = 3
 function AddComponent() {
     
-    $('#AddComponent').append('<input name="Components['+inputNumber+']" type="text" />');
+    $('#AddComponent').append('<input name="RecipeComponents['+inputNumber+']" type="text" />');
     inputNumber++;
 }
 $(document).ready(function ()

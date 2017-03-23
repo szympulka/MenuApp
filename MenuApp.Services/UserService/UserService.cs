@@ -57,9 +57,9 @@ namespace MenuApp.Services.UserService
             }
             return false;
         }
-        public string UserRole(string userRole)
+        public string UserRole(string userName)
         {
-            var user = _dataContext.All<User>().First(u => u.UserName == userRole);
+            var user = _dataContext.All<User>().First(u => u.UserName == userName);
             if (user != null)
             {
                 return user.Role;

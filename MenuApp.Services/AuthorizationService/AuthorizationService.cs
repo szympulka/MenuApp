@@ -4,6 +4,9 @@ using MenuApp.Services.Models.UserModel;
 using MenuApp.Common.Helpers;
 using System.Web.Security;
 using MenuApp.Services.Fakes.MailService;
+#if !DEBUG 
+using MenuApp.Services.MailService;
+#endif
 using MenuApp.Services.UserService;
 
 namespace MenuApp.Services.AuthorizationService

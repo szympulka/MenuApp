@@ -34,20 +34,20 @@ namespace MenuApp.Web.Controllers
         public ActionResult Index()
         {
             return View("Breakfast1");
-            var timeOfDay = _homeSerivce.TimeOfDay();
-            if (timeOfDay == "Breakfast")
-            {
-                return RedirectToAction("Breakfast");
-            }
-            if (timeOfDay == "Lunch")
-            {
-                return RedirectToAction("Lunch");
-            }
-            if (timeOfDay == "Coffe")
-            {
-                return RedirectToAction("Coffee");
-            }
-            return RedirectToAction("Dinner");
+            ////var timeOfDay = _homeSerivce.TimeOfDay();
+            ////if (timeOfDay == "Breakfast")
+            ////{
+            ////    return RedirectToAction("Breakfast");
+            ////}
+            ////if (timeOfDay == "Lunch")
+            ////{
+            ////    return RedirectToAction("Lunch");
+            ////}
+            ////if (timeOfDay == "Coffe")
+            ////{
+            ////    return RedirectToAction("Coffee");
+            ////}
+            ////return RedirectToAction("Dinner");
         }
 
         public ViewResult Breakfast()

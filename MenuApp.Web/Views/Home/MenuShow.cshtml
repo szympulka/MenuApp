@@ -3,11 +3,8 @@
 
 @foreach (var item in Model)
 {
-    <div>
-
-        <div>
-            <img src="~/Content/HomeContent/img/symbols.png" width="33" height="33" />
-            @item.Cuisine
+        <div class="MenuShow move" id="@item.Cuisine">
+            <span><img src="~/Content/HomeContent/img/symbols.png" width="33" height="33" alt="@item.Cuisine"/></span>
+            <span>@item.Cuisine</span>
         </div>
-    </div>
 }

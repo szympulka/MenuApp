@@ -32,7 +32,7 @@ namespace MenuApp.Common.Helpers
                 webresponse.Close();
                 return result;
             }
-            catch (Exception ex)
+            catch
             {
                 return null;
             }
