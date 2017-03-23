@@ -1,5 +1,8 @@
 ﻿$(document).ready(function () {
+    var heightBestPanel = $('.category-menu-items').height();
 
+    $('.best-recipes-left').css({ 'height': heightBestPanel, 'margin-top': -heightBestPanel });
+    $('.best-recipes-right').css({ 'height': heightBestPanel, 'margin-top': -heightBestPanel });
 
     $('.DayName').css({
         "padding-left": 70,
@@ -12,9 +15,7 @@
         var height = $('.category-menu-items').offset().top;
         if (divOnClick.hasClass('helpClass'))
         {
-            divOnClick.css({ 'margin-top': '0px', 'margin-left': '0px' });
-            divOnClick.removeClass('asd');
-            $('.best-recipes').remove();
+            hideBestMenuPanel(divOnClick);
         }
         else {
             moveDiv(divOnClick, height);
@@ -37,8 +38,17 @@ var moveDiv = function (divOnClick, heightTop) {
 
 var showBestMenuPanel = function ()
 {
-    var height = $('#bottom-categorymenuEmpty').offset().top-$('.category-menu-items').offset().top;
-   $('.category-menu-items').append('<div class = "best-recipes" style="height: '+ height +'px"></div>')
+    $('.best-recipes-left').addClass('hide-best-recipes-left');
+    $('.best-recipes-right').addClass('hide-best-recipes-right');
+}
+var hideBestMenuPanel = function (divOnClick)
+{
+    $('.best-recipes-left').removeClass('hide-best-recipes-left');;
+    $('.best-recipes-right').removeClass('hide-best-recipes-right');
+    divOnClick.css({ 'margin-top': '0px', 'margin-left': '0px' });
+    divOnClick.removeClass('asd');
+    $('.best-recipes').remove();
+    divOnClick.removeClass('helpClass');
 }
  
 function burger(x) {

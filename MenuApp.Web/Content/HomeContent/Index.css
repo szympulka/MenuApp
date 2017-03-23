@@ -246,15 +246,28 @@ section.module.parallax {
 .MenuShow span :hover{
    cursor:pointer;
 }
-.best-recipes {
+.best-recipes-left {
     height: 200px;
-    width: auto;
+    width: 50%;
     background-color: #907256;
-    display: block;
     position: relative;
     min-height: 500px;
+    margin-left: -50%;
 }
-
+.best-recipes-right {
+    width: 50%;
+    background-color: #507256;
+  
+    position: relative;
+    min-height: 500px;
+    margin-left: 100%;
+}
+.hide-best-recipes-left {
+    margin-left:50%;
+}
+.hide-best-recipes-right {
+    margin-left:0;
+}
 
 .move {
     transition: 2s;
