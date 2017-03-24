@@ -110,6 +110,7 @@
     <Compile Include="LogService\LogService.cs" />
     <Compile Include="MailService\IMailService.cs" />
     <Compile Include="MailService\MailService.cs" />
+    <Compile Include="Models\BestFifeRecipesModel.cs" />
     <Compile Include="Models\RecipeModel\AddRecipeModel.cs" />
     <Compile Include="Models\RecipeModel\AdvanceSearchViewModel.cs" />
     <Compile Include="Models\RecipeModel\DetailRecipeModel.cs" />

@@ -1,4 +1,5 @@
 ﻿$(document).ready(function () {
+    addPromisejs();
     var heightBestPanel = $('.category-menu-items').height();
 
     $('.best-recipes-left').css({ 'height': heightBestPanel, 'margin-top': -heightBestPanel });
@@ -18,6 +19,7 @@
             hideBestMenuPanel(divOnClick);
         }
         else {
+            downloadBestRecipes(document.title);
             moveDiv(divOnClick, height);
         }
 
@@ -71,3 +73,22 @@ function burger(x) {
     
 }
 
+var addPromisejs = function ()
+{
+    var script = document.createElement('script');
+    script.src = 'https://www.promisejs.org/polyfills/promise-6.1.0.js';
+    document.head.appendChild(script);
+}
+
+var downloadBestRecipes = function (title)
+{
+    var url = "Recipe/BestFourRecipes/"+title
+    returnDataJson(url).then(function (val) {
+        
+        for (var p in val)
+        {
+            console.log(val[p].Title);
+        }
+    });
+
+}

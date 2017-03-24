@@ -17,7 +17,6 @@ namespace MenuApp.Services.RecipeService
         void SubstitutionActive(SubstitutionActiveModel recipeModel);
         List<Recipe> NewRecipes();
         bool EditRecipe(EditeRecipeModel editRecipe);
-        List<Recipe> BestFiveRecipes();
         List<Recipe> SearchByCategory(string category, string categoryOfFOod);
         int RandomRecipe();
         Dictionary<string, IEnumerable<string>> MenuShow();
@@ -27,5 +26,6 @@ namespace MenuApp.Services.RecipeService
         string CheckRecipeTitleExist(string title);
         List<RecipeCategory> NewUnacceptedRecipesCategory();
         DetailRecipeModel DetailsRecipe(int id);
+        List<BestFifeRecipesModel> BestFourRecipes(string title);
     }
 }

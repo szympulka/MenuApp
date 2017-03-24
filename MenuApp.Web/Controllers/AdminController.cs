@@ -7,7 +7,7 @@ using PagedList;
 
 namespace MenuApp.Web.Controllers
 {
-    [Authorize]
+  //  [Authorize]
     public class AdminController : Controller
     {
         private IUserService _userService;

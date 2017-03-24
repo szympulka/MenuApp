@@ -1,9 +1,4 @@
 ﻿$(document).ready(function () {
-
-    var script = document.createElement('script');
-    script.src = 'https://www.promisejs.org/polyfills/promise-6.1.0.js';
-    document.head.appendChild(script);
-
     if (document.cookie.indexOf("AddIp=True") == -1) {
         document.cookie = "AddIp=True;";
         var browser = checkBrowser();
@@ -22,7 +17,7 @@ function returnDataJson(urlAnswer) {
             success: function (val) {
                 resolve(val);
             },
-            error: function () {
+            error: function (a,b,c) {
                 alert("coś nie śmiga");
             }
         });
@@ -45,6 +40,7 @@ function checkRecipeTitleExist(title) {
     });
 
 }
+
 function checkBrowser() {
     if ((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1) {
         return "Opera";

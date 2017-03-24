@@ -145,10 +145,6 @@ namespace MenuApp.Services.RecipeService
             _dataContext.Find<Recipe>(recipeModel.Id).IsActive = !recipeModel.IsActive;
             _dataContext.SaveChanges();
         }
-        public List<Recipe> BestFiveRecipes()
-        {
-            return _dataContext.All<Recipe>().OrderByDescending(x => x.RecipeLikes).Take(5).ToList();
-        }
 
         public List<Recipe> SearchByCategory(string category, string categoryOfFOod)
         {
@@ -226,6 +222,26 @@ namespace MenuApp.Services.RecipeService
             };
 
             return null;
+        }
+
+        public List<BestFifeRecipesModel> BestFourRecipes(string title)
+        {
+            title = "Breakfast";
+            //TODO::
+            List<BestFifeRecipesModel> bestFourRecpiesList = new List<BestFifeRecipesModel>();
+            var recipes = _dataContext.All<Recipe>().Where(x=> x.RecipeCategories.FoodCateogry == title && x.IsActive).OrderBy(x => x.RecipeLikes).Take(4).ToList();
+            foreach(var model in recipes)
+            {
+                BestFifeRecipesModel bestFour = new BestFifeRecipesModel();
+              //  bestFour.CountComments = _dataContext.All<Recipe>().Where(x => x.Title == model.Title).Count(x => x.Comments != null);
+                bestFour.DateAdded = model.DateAdded;
+                bestFour.RecipeDisLikes = model.RecipeDisLikes;
+                bestFour.RecipeLikes = model.RecipeLikes;
+                bestFour.ShortDescription = model.ShortDescription;
+                bestFour.Title = model.Title;
+                bestFourRecpiesList.Add(bestFour);
+            }
+            return bestFourRecpiesList;
         }
     }
 }

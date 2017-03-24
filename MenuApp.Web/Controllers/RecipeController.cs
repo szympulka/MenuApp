@@ -5,6 +5,8 @@ using System.Web;
 using MenuApp.Common.Helpers;
 using MenuApp.Services.Models;
 using PagedList;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace MenuApp.Web.Controllers
 {
@@ -63,11 +65,6 @@ namespace MenuApp.Web.Controllers
             return View(_recipeService.DetailsRecipe(id));
         }
 
-        public ActionResult BestFiveRecipes()
-        {
-            return View(_recipeService.BestFiveRecipes());
-        }
-
         public ActionResult SearchByCategory(string category, string categoryOfFOod)
         {
             return View(_recipeService.SearchByCategory(category, categoryOfFOod));
@@ -100,6 +97,13 @@ namespace MenuApp.Web.Controllers
         public string CheckRecipeTitleExist(string title)
         {
             return _recipeService.CheckRecipeTitleExist(title);
+        }
+
+        [HttpGet]
+        [Route("Recipe/BestFourRecipes/{title}")]
+        public ActionResult BestFourRecipes(string title)
+        {
+            return this.Json(_recipeService.BestFourRecipes(title), JsonRequestBehavior.AllowGet);
         }
     }
 
