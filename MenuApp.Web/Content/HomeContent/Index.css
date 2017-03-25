@@ -254,15 +254,17 @@ section.module.parallax {
     position: absolute;
     min-height: 500px;
     margin-left: -50%;
+    min-width:750px;
 }
 
 .best-recipes-right {
     width: 50%;
-    background-color: #507256;
+    background-color: #907256;
     height: 200px;
     position: absolute;
     min-height: 500px;
     margin-left: 100%;
+    min-width: 750px;
 }
 
 .hide-best-recipes-left {
@@ -286,7 +288,7 @@ section.module.parallax {
 }
 
 .dateAddedRecipe {
-    height: 35%;
+    height: 100%;
     width: 20%;
     background: red;
     display:inline-block;
@@ -294,31 +296,35 @@ section.module.parallax {
 
 .titleRecipe {
     width: 80%;
-    height: 35%;
+    height: 100%;
     background-color: aliceblue;
-    float:right;
+    float: right;
+    text-align: center;
+    font-size: 50px;
+    font-family: 'Ranga', cursive;
 }
 
 .photoRecipe {
-    height:65%;
+    height:100%;
     width:27%;
     display:inline-block;
     background-color:aqua;
+    
 }
 
 .descriptionRecipe {
     float:right;
     width:73%;
     background-color:coral;
-    height:55%;
+    height:86%;
 }
 
 .infoRecipe {
     float:right;
     background-color:purple;
     width:73%;
-    height:10%;
-    margin-top:-29px;
+    height:14%;
+    margin-top:-28px;
 }
 
 .likesRecipe {
@@ -347,4 +353,24 @@ section.module.parallax {
     background-color: orange;
     display: inline-block;
     float: right;
+}
+#First {
+   
+}
+#Second {
+
+}
+#Third {
+   
+}
+#Fourth {
+
+}
+.best-first-section{
+    width:100%;
+    height:35%;
+}
+.best-second-section {
+    width: 100%;
+    height: 65%;
 }

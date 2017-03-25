@@ -16,9 +16,10 @@
         var height = $('.category-menu-items').offset().top;
         if (divOnClick.hasClass('helpClass')) {
             hideBestMenuPanel(divOnClick);
+            removeBestRecipe();
         }
         else {
-            downloadBestRecipes(document.title);
+            downloadBestRecipes(document.title,this.alt);
             moveDiv(divOnClick, height);
         }
 
@@ -97,13 +98,22 @@ var showBestRecipe = function (recipe, p) {
             $(recipeObject + ' .unlikesRecipe').text('DisLikes:' + recipe.RecipeDisLikes)
             $(recipeObject + ' .countCommentRecipe').text('Comments:' + recipe.CountComments)
             $(recipeObject + ' .likesRecipe').text('Likes:' + recipe.RecipeLikes)
-            $(recipeObject + ' .dateAddedRecipe').text(recipe.DateAdded)
+           // $(recipeObject + ' .dateAddedRecipe').text(recipe.DateAdded)
 
-        }, 600);
+        }, 3000);
+}
+var removeBestRecipe = function() {
+    $('.descriptionRecipe').empty()
+    $('.titleRecipe').empty()
+    $('.unlikesRecipe').empty()
+    $('.countCommentRecipe').empty()
+    $('.likesRecipe').empty()
+    $('.dateAddedRecipe').empty()
+
 }
 
-var downloadBestRecipes = function (title) {
-    var url = "Recipe/BestFourRecipes/" + title
+var downloadBestRecipes = function (title,category) {
+    var url = "Recipe/BestFourRecipes/" + title + '/' + category;
     returnDataJson(url).then(function (val) {
         setTimeout(
             function () {

@@ -100,8 +100,8 @@ namespace MenuApp.Web.Controllers
         }
 
         [HttpGet]
-        [Route("Recipe/BestFourRecipes/{title}")]
-        public ActionResult BestFourRecipes(string title)
+        [Route("Recipe/BestFourRecipes/{title}/{category}")]
+        public ActionResult BestFourRecipes(string title,string category)
         {
             return this.Json(_recipeService.BestFourRecipes(title), JsonRequestBehavior.AllowGet);
         }
