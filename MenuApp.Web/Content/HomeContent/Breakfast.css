@@ -1,0 +1,24 @@
+﻿
+/*//////////////////////////////////////////////*/
+
+
+.DayName {
+    font-family: 'Pacifico', cursive;
+    font-size: 70px;
+    width: 400px;
+    height: 85vh;
+    padding: 150px 20px 200px 20px;
+}
+
+    .DayName div {
+        margin-top: -100px;
+    }
+
+.Breakfast1 {
+    background-image: url('img/breakfast.jpg');
+}
+
+.links {
+    font-size: 20px;
+    padding-top: 5px;
+}

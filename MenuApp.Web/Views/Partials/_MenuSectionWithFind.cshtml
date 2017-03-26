@@ -1,0 +1,154 @@
+﻿<section class="info_section">
+    <div>
+        <div class="find_result" style="display:none">
+            <div class="cross">
+                <div onclick="hidePanel()">
+                    <img src="~/Content/HomeContent/img/delete.png" />
+                </div>
+            </div>
+        </div>
+        <div class="find_section">
+            <div class="find_box">
+
+                <form method="get" action="../Recipe/FindRecipesToList/">
+                    <input type="text" name="Find" />
+                    <div>
+                        <button>Find</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <div class="category-menu">
+            <p>@ViewBag.Title Category</p>
+        </div>
+        <div class="category-menu-items">
+            @Html.Action("MenuShow", "Home", new { foodCateogry = ViewBag.Title })
+        </div>
+        <div class="best-recipes-left move">
+            <div id="Second" class="best">
+                <div class="best-first-section">
+                    <div class="dateAddedRecipe">
+
+                    </div>
+                    <div class="titleRecipe">
+
+                    </div>
+                </div>
+                <div class="best-second-section">
+                    <div class="photoRecipe">
+
+                    </div>
+                    <div class="descriptionRecipe">
+
+                    </div>
+                    <div class="infoRecipe">
+                        <div class="likesRecipe">
+
+                        </div>
+                        <div class="unlikesRecipe">
+
+                        </div>
+                        <div class="countCommentRecipe">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Fourth" class="best">
+                <div class="best-first-section">
+                    <div class="dateAddedRecipe">
+
+                    </div>
+                    <div class="titleRecipe">
+
+                    </div>
+                </div>
+                <div class="best-second-section">
+                    <div class="photoRecipe">
+
+                    </div>
+                    <div class="descriptionRecipe">
+
+                    </div>
+                    <div class="infoRecipe">
+                        <div class="likesRecipe">
+
+                        </div>
+                        <div class="unlikesRecipe">
+
+                        </div>
+                        <div class="countCommentRecipe">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="best-recipes-right move">
+
+            <div id="First" class="best">
+                <div class="best-first-section">
+                    <div class="dateAddedRecipe">
+
+                    </div>
+                    <div class="titleRecipe">
+
+                    </div>
+                </div>
+                <div class="best-second-section">
+                    <div class="photoRecipe">
+
+                    </div>
+                    <div class="descriptionRecipe">
+
+                    </div>
+                    <div class="infoRecipe">
+                        <div class="likesRecipe">
+
+                        </div>
+                        <div class="unlikesRecipe">
+
+                        </div>
+                        <div class="countCommentRecipe">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="Third" class="best">
+                <div class="best-first-section">
+                    <div class="dateAddedRecipe">
+
+                    </div>
+                    <div class="titleRecipe">
+
+                    </div>
+                </div>
+                <div class="best-second-section">
+                    <div class="photoRecipe">
+
+                    </div>
+                    <div class="descriptionRecipe">
+
+                    </div>
+                    <div class="infoRecipe">
+                        <div class="likesRecipe">
+
+                        </div>
+                        <div class="unlikesRecipe">
+
+                        </div>
+                        <div class="countCommentRecipe">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="bottom-categorymenuEmpty"></div>
+    </div>
+
+</section>
