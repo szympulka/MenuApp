@@ -243,5 +243,42 @@ namespace MenuApp.Services.RecipeService
             }
             return bestFourRecpiesList;
         }
+
+        public List<FindRecipesByAjaxModel> FindRecipesByAjax(string ask)
+        {
+            List<FindRecipesByAjaxModel> findRecipesList = new List<FindRecipesByAjaxModel>();
+            FindRecipesByAjaxModel findRecipe = new FindRecipesByAjaxModel();
+            var find = _dataContext.All<Recipe>().Where(x => x.Title.Contains(ask)
+            || x.HardLevel.Contains(ask)
+            || x.ShortDescription.Contains(ask)
+            || x.Author.Contains(ask)
+            ).Take(20).ToList();
+
+            foreach(var p in find )
+            {
+                findRecipe.Title = p.Title;
+                findRecipe.ShortDescription = p.ShortDescription;
+                findRecipe.HardLevel = p.HardLevel;
+                findRecipe.Author = p.Author;
+                findRecipesList.Add(findRecipe);
+            }
+
+            return findRecipesList;
+        }
+        public List<FindCategoryByAjaxModel> FindCategoryByAjax(string ask)
+        {
+            List<FindCategoryByAjaxModel> findList = new List<FindCategoryByAjaxModel>();
+            FindCategoryByAjaxModel findCategory = new FindCategoryByAjaxModel();
+
+            var find = _dataContext.All<RecipeCategory>().Where(x => (x.Cuisine.Contains(ask) || x.FoodCateogry.Contains(ask)) && x.ActiveCategory);
+            foreach(var p in find)
+            {
+                findCategory.Cuisine = p.Cuisine;
+                findCategory.Category = p.FoodCateogry;
+                findList.Add(findCategory);
+            }
+
+            return findList;
+        }
     }
 }

@@ -1,4 +1,7 @@
-﻿$(document).ready(function () {
+﻿var removeField = false;
+
+$(document).ready(function () {
+
     addPromisejs();
     var heightBestPanel = $('.category-menu-items').height();
 
@@ -17,14 +20,28 @@
         if (divOnClick.hasClass('helpClass')) {
             hideBestMenuPanel(divOnClick);
             removeBestRecipe();
+          
         }
         else {
-            downloadBestRecipes(document.title,this.alt);
+            downloadBestRecipes(document.title, this.alt);
             moveDiv(divOnClick, height);
+   
         }
 
     });
-
+    $('.find_box input').on("keyup", function () {
+        if (this.value) {
+            if (!removeField)
+            {
+                createFindField();
+                removeField = true;
+            }
+            showFindField(this.value);
+        }
+        else {
+            hidePanel();
+        }
+    });
 });
 var moveDiv = function (divOnClick, heightTop) {
     var marginLeftSize = divOnClick.position().left - ($(window).width() - $('.category-menu-items').outerWidth()) / 2;
@@ -98,11 +115,11 @@ var showBestRecipe = function (recipe, p) {
             $(recipeObject + ' .unlikesRecipe').text('DisLikes:' + recipe.RecipeDisLikes)
             $(recipeObject + ' .countCommentRecipe').text('Comments:' + recipe.CountComments)
             $(recipeObject + ' .likesRecipe').text('Likes:' + recipe.RecipeLikes)
-           // $(recipeObject + ' .dateAddedRecipe').text(recipe.DateAdded)
+            // $(recipeObject + ' .dateAddedRecipe').text(recipe.DateAdded)
 
         }, 3000);
 }
-var removeBestRecipe = function() {
+var removeBestRecipe = function () {
     $('.descriptionRecipe').empty()
     $('.titleRecipe').empty()
     $('.unlikesRecipe').empty()
@@ -112,7 +129,7 @@ var removeBestRecipe = function() {
 
 }
 
-var downloadBestRecipes = function (title,category) {
+var downloadBestRecipes = function (title, category) {
     var url = "Recipe/BestFourRecipes/" + title + '/' + category;
     returnDataJson(url).then(function (val) {
         setTimeout(
@@ -125,4 +142,54 @@ var downloadBestRecipes = function (title,category) {
             }, 4150);
     });
 
+}
+
+var showFindField = function (value) {
+    $('.find_result').removeAttr('style');
+    $('.recipe_result').empty();
+    $('.category_result').empty();
+    $('.category_result').append('<div style="width:75%;">chucucucuucucuuu</div>')
+    findRecipes(value);
+    findCategories(value);
+
+}
+
+var hidePanel = function () {
+    $('.recipe_result').empty();
+    $('.category_result').empty();
+    $('.find_result').css('display', 'none');
+    removeField == false;
+    removeFindField();
+}
+var findRecipes = function (value) {
+
+    var url = "Recipe/FindRecipesByAjax/" + value;
+    returnDataJson(url).then(function (val) {
+        for (var p in val) {
+            $('.recipe_result').append('<div class="ajaxResult">' + val[p].Title + '</div>');
+
+      //      console.log(val[p].Title);
+        }
+    });
+}
+var findCategories = function (value) {
+    var url = "Recipe/FindCategoryByAjax/" + value;
+    returnDataJson(url).then(function (val) {
+        for (var p in val)
+            $('.category_result').append('<div class="ajaxResultCategory">' + val[p].Cuisine + '</div>');
+    //    console.log(val[p].Cuisine);
+    });
+}
+var createFindField = function () {
+    $('.find_section').after('<div class="find_result_panel"><div class="recipe_result"></div> <div class="category_result"></div></div>');
+    //<div class="find_result_panel">
+    //    <div class="recipe_result">
+    //    </div>
+    //    <div class="category_result">
+    //    </div>
+    //</div>
+}
+var removeFindField = function ()
+{
+    $('.find_result_panel').remove();
 }

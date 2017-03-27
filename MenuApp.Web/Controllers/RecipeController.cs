@@ -105,6 +105,18 @@ namespace MenuApp.Web.Controllers
         {
             return this.Json(_recipeService.BestFourRecipes(title), JsonRequestBehavior.AllowGet);
         }
+        [HttpGet]
+        [Route("Recipe/FindRecipesByAjax/{ask}")]
+        public JsonResult FindRecipesByAjax(string ask)
+        {
+            return Json(_recipeService.FindRecipesByAjax(ask), JsonRequestBehavior.AllowGet);
+        }
+        [HttpGet]
+        [Route("Recipe/FindCategoryByAjax/{ask}")]
+        public JsonResult FindCategoryByAjax(string ask)
+        {
+            return Json(_recipeService.FindCategoryByAjax(ask), JsonRequestBehavior.AllowGet);
+        }
     }
 
 }

@@ -18,7 +18,7 @@ function returnDataJson(urlAnswer) {
                 resolve(val);
             },
             error: function (a,b,c) {
-                alert("coś nie śmiga");
+                console.log(a+b+c)
             }
         });
     });

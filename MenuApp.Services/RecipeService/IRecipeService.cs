@@ -27,5 +27,7 @@ namespace MenuApp.Services.RecipeService
         List<RecipeCategory> NewUnacceptedRecipesCategory();
         DetailRecipeModel DetailsRecipe(int id);
         List<BestFifeRecipesModel> BestFourRecipes(string title);
+        List<FindRecipesByAjaxModel> FindRecipesByAjax(string ask);
+        List<FindCategoryByAjaxModel> FindCategoryByAjax(string ask);
     }
 }

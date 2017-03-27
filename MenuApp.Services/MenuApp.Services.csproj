@@ -110,6 +110,8 @@
     <Compile Include="LogService\LogService.cs" />
     <Compile Include="MailService\IMailService.cs" />
     <Compile Include="MailService\MailService.cs" />
+    <Compile Include="Models\RecipeModel\FindCategoryByAjaxModel.cs" />
+    <Compile Include="Models\RecipeModel\FindRecipesByAjaxModel.cs" />
     <Compile Include="Models\RecipeModel\BestFifeRecipesModel.cs" />
     <Compile Include="Models\RecipeModel\AddRecipeModel.cs" />
     <Compile Include="Models\RecipeModel\AdvanceSearchViewModel.cs" />
