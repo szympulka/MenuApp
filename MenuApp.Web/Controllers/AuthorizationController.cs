@@ -50,27 +50,27 @@ namespace MenuApp.Web.Controllers
         {
             if (HttpContext.User.Identity.IsAuthenticated || string.IsNullOrEmpty(passModel.NewPassword))
                 return View("ChangePasswordByLink", passModel);
-            _userService.ChangePasswordByLink(passModel);
+            _authorizationService.ChangePasswordByLink(passModel);
             return RedirectToAction("Index", "Home");
         }
 
         [Route("Authorization/ActivateAccount/{key}")]
         public ActionResult ActivateAccount(string key)
         {
-            _userService.ActivateAccount(key);
+            _authorizationService.ActivateAccount(key);
             return RedirectToAction("Index", "Home");
         }
         [Route("Authorization/ChangePassword/{key}")]
         public ActionResult ChangePasswordByLink(string key)
         {
-            return ChangePasswordByLink(_userService.ChangePasswordByLink(key));
+            return ChangePasswordByLink(_authorizationService.ChangePasswordByLink(key));
             
         }
         public ActionResult ChangePassword(ChangePasswordModel passwordModel)
         {
             if (passwordModel != null)
             {
-                _userService.ChangePasswordByLink(passwordModel);
+                _authorizationService.ChangePasswordByLink(passwordModel);
             }
             return View(passwordModel);
         }

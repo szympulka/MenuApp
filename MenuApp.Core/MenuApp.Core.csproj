@@ -33,6 +33,15 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
@@ -69,6 +78,14 @@
     <Compile Include="Migrations\201703211831259_first.Designer.cs">
       <DependentUpon>201703211831259_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703302112152_Logs edit.cs" />
+    <Compile Include="Migrations\201703302112152_Logs edit.Designer.cs">
+      <DependentUpon>201703302112152_Logs edit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703302156427_LogNew.cs" />
+    <Compile Include="Migrations\201703302156427_LogNew.Designer.cs">
+      <DependentUpon>201703302156427_LogNew.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +103,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703211831259_first.resx">
       <DependentUpon>201703211831259_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703302112152_Logs edit.resx">
+      <DependentUpon>201703302112152_Logs edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703302156427_LogNew.resx">
+      <DependentUpon>201703302156427_LogNew.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

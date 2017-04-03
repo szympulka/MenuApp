@@ -11,6 +11,7 @@ using SendGrid;
 using SendGrid.Helpers.Mail;
 using MenuApp.Services.LogService;
 using MenuWeb.Core.Entities;
+using Castle.DynamicProxy;
 
 namespace MenuApp.Services.MailService
 {
@@ -54,6 +55,8 @@ namespace MenuApp.Services.MailService
                 Log log = new Log();
                 log.DateLog = date.ServerTime();
                 log.Error = ex.Message;
+                log.UserDateLog = date.LocalDateTime();
+                log.FunctionArgumnets = userMail + ";" + title + ";" + message;
                 log.ErrorPlace = "MailService/SendMail_Gmail";
                 _logService.addLog(log);
             }
@@ -86,10 +89,14 @@ namespace MenuApp.Services.MailService
 
             catch (Exception ex)
             {
+                //SendMail_Gmail(userMail, title, message);
                 var date = new DateTimeHelper();
                 Log log = new Log();
+                log.StackTrace = ex.StackTrace;
                 log.DateLog = date.ServerTime();
+                log.UserDateLog = date.LocalDateTime();
                 log.Error = ex.Message;
+                log.FunctionArgumnets = userMail + ";" + title + ";" + message;
                 log.ErrorPlace = "MailService/SendMail_Sendgrid";
                 _logService.addLog(log);
             }
@@ -110,7 +117,7 @@ namespace MenuApp.Services.MailService
                 Email to = new Email("pulson666@gmail.com");
                 Content content = new Content("text/plain", "and easy to do anywhere, even with C#");
                 Mail mail = new Mail(from, subject, to, content);
-                mail.TemplateId = "93ff2ef4-cc63-48b8-9f2d-a454f1e4578f";
+                mail.TemplateId = Consts.SendGrid_TemplateKey_Newsletter;
                 dynamic response = await sg.client.mail.send.post(requestBody: mail.Get());
             }
             catch (Exception ex)
@@ -118,6 +125,7 @@ namespace MenuApp.Services.MailService
                 var date = new DateTimeHelper();
                 Log log = new Log();
                 log.DateLog = date.ServerTime();
+                log.UserDateLog = date.LocalDateTime();
                 log.Error = ex.Message;
                 log.ErrorPlace = "MailServie/SendNewsletter";
                 _logService.addLog(log);

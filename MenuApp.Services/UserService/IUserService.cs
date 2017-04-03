@@ -17,10 +17,7 @@ namespace MenuApp.Services.UserService
         List<Recipe> UserRecipes();
         User EditUser(EditUserModel editUser);
         List<User> NewUsers();
-        void ActivateAccount(string token);
-        ChangePasswordModel ChangePasswordByLink(string key);
-        bool ChangePasswordByLink(ChangePasswordModel passwordModel);
-        bool ChangePassword(ChangePasswordModel changeModel);
+
 
     }
 }

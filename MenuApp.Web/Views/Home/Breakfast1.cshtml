@@ -1,39 +1,21 @@
 ﻿<!DOCTYPE html>
 @{
     ViewBag.Title = "Breakfast";
+    Layout = "~/Views/Layouts/_NavBar.cshtml";
+    Styles.Render("~/Breakfast");
+    Scripts.Render("~/Breakfast");
 }
+
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="~/scripts/Home/Home.js"></script>
-    <link href="~/Content/HomeContent/Index.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
 </head>
 <body>
-    <div class="navBar ">
-        <div class="burger" onclick="burger(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
 
-        <div class="logo">
-            YourRecipes.com
-        </div>
-        <div class="login-bar">
-            <div class="login">
-                @Html.ActionLink("Login", "Login", "Authorization")
-            </div>
-        </div>
-    </div>
-    <div class="burger-menu" style="display: none;">
-        <p style="background-color: green; padding-top: 50px;">coś</p>
-        <p>Coś</p>
-        <p>CośCoś</p>
-        <p>CośCośCoś</p>
-    </div>
     <section class="module parallax Breakfast1">
         <div style="height:95%;">
             <div class="DayName">
@@ -49,163 +31,8 @@
             </div>
         </div>
     </section>
-    <section class="info_section">
-        @*<div  style="height:50%; width:100vh;position:absolute;">
-                <div class="center-div" style="width:70%;height:70%;">
-                    <div class="one"></div>
-                    <div class="two"></div>
-                </div>
-            </div>*@
-        <div>
-            <div class="find_section">
-                <div class="find_box">
 
-                    <form method="get" action="../Recipe/FindRecipesToList/">
-                        <input type="text" name="Find" />
-                        <div>
-                            <button>Find</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-        <div>
-            <div class="category-menu">
-                <p>@ViewBag.Title Category</p>
-            </div>
-
-
-            <div class="category-menu-items">
-                @Html.Action("MenuShow", "Home", new { foodCateogry = ViewBag.Title })
-            </div>
-            <div class="best-recipes-left move">
-                <div id="Second" class="best">
-                    <div class="best-first-section">
-                        <div class="dateAddedRecipe">
-
-                        </div>
-                        <div class="titleRecipe">
-
-                        </div>
-                    </div>
-                    <div class="best-second-section">
-                        <div class="photoRecipe">
-
-                        </div>
-                        <div class="descriptionRecipe">
-
-                        </div>
-                        <div class="infoRecipe">
-                            <div class="likesRecipe">
-
-                            </div>
-                            <div class="unlikesRecipe">
-
-                            </div>
-                            <div class="countCommentRecipe">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="Fourth" class="best">
-                    <div class="best-first-section">
-                        <div class="dateAddedRecipe">
-
-                        </div>
-                        <div class="titleRecipe">
-
-                        </div>
-                    </div>
-                    <div class="best-second-section">
-                        <div class="photoRecipe">
-
-                        </div>
-                        <div class="descriptionRecipe">
-
-                        </div>
-                        <div class="infoRecipe">
-                            <div class="likesRecipe">
-
-                            </div>
-                            <div class="unlikesRecipe">
-
-                            </div>
-                            <div class="countCommentRecipe">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="best-recipes-right move">
-
-                <div id="First" class="best">
-                    <div class="best-first-section">
-                        <div class="dateAddedRecipe">
-
-                        </div>
-                        <div class="titleRecipe">
-
-                        </div>
-                    </div>
-                    <div class="best-second-section">
-                        <div class="photoRecipe">
-
-                        </div>
-                        <div class="descriptionRecipe">
-
-                        </div>
-                        <div class="infoRecipe">
-                            <div class="likesRecipe">
-
-                            </div>
-                            <div class="unlikesRecipe">
-
-                            </div>
-                            <div class="countCommentRecipe">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div id="Third" class="best">
-                    <div class="best-first-section">
-                        <div class="dateAddedRecipe">
-
-                        </div>
-                        <div class="titleRecipe">
-
-                        </div>
-                    </div>
-                    <div class="best-second-section">
-                        <div class="photoRecipe">
-
-                        </div>
-                        <div class="descriptionRecipe">
-
-                        </div>
-                        <div class="infoRecipe">
-                            <div class="likesRecipe">
-
-                            </div>
-                            <div class="unlikesRecipe">
-
-                            </div>
-                            <div class="countCommentRecipe">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div id="bottom-categorymenuEmpty"></div>
-        </div>
-
-    </section>
-
-    <script src="~/scripts/Commons/AjaxCommons.js"></script>
+    @Html.Partial("~/Views/Partials/_MenuSectionWithFind.cshtml")
 
 
 </body>

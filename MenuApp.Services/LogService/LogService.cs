@@ -10,6 +10,7 @@ namespace MenuApp.Services.LogService
         }
         public void addLog(Log log)
         {
+
             _dataContext.Add<Log>(log);
             _dataContext.SaveChanges();
         }
