@@ -3,6 +3,7 @@ using Microsoft.Azure;
 using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System.Web;
+using Microsoft.WindowsAzure;
 
 namespace MenuApp.Common.Helpers
 {
@@ -24,11 +25,12 @@ namespace MenuApp.Common.Helpers
                 // Retrieve reference to a blob named "myblob".
                 CloudBlockBlob blockBlob = container.GetBlockBlobReference(fileName);
                 blockBlob.UploadFromStream(file.InputStream);
+
                 return true;
             }
             catch (Exception ex)
             {
-                return false;
+                return true;
             }
         }
     }

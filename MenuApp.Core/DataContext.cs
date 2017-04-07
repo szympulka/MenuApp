@@ -15,8 +15,9 @@ namespace MenuApp.Core
         public DbSet<Newsletter> Newsletters { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<RecipeLike> RecipeLikes { get; set; }
-        public DbSet<Comment> Comments { get; set; }
+        public DbSet<RecipeComment> RecipeComments { get; set; }
         public DbSet<RecipeCategory> RecipeCategories { get; set; }
+        public DbSet<RecipePhotoLink> RecipePhotoLinks { get; set; }
         //big data
         public DbSet<Logon> Logons { get; set; }
 

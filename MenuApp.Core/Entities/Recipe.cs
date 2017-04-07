@@ -34,8 +34,9 @@ namespace MenuApp.Core.Entities
         public int CategoryId { get; set; }
 
         
+        public virtual ICollection<RecipePhotoLink> RecipePhotoLinks { get; set; }
         public virtual ICollection<RecipeComponent> RecipeComponents { get; set; }
-        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<RecipeComment> RecipeComments { get; set; }
 
         [ForeignKey("CategoryId")]
         public virtual RecipeCategory RecipeCategories { get; set; }

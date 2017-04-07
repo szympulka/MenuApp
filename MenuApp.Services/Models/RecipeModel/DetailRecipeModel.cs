@@ -16,7 +16,7 @@ namespace MenuApp.Services.Models.RecipeModel
         public string Author { get; set; }
         public string HardLevel { get; set; }
         public int Views { get; set; }
-        public Comment Comments { get; set; }
+        public RecipeComment Comments { get; set; }
         public List<string> RecipeComponents { get; set; }
 
 

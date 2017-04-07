@@ -15,28 +15,39 @@ namespace MenuApp.Web.Controllers
         {
             _authorizationService = authorizationService;
             _userService = userService;
-        }    
+        }
 
         // GET: Authorization
-        public ActionResult Registration(User model)
+        public ActionResult Registration()
         {
-            if (ModelState.IsValid && model.Password != null)
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Registration(RegistrationModel model)
+        {
+            if (model.Password != null)
             {
-                _authorizationService.Registration(model);
-                return RedirectToAction("Index", "Home");
+                if (_authorizationService.Registration(model))
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
+            return RedirectToAction("Index", "Home");
+        }
+        public ActionResult Login()
+        {        
             return View();
         }
 
+        [HttpPost]
         public ActionResult Login(LoginUserModel model)
         {
-           
             if (model.UserName != null && model.Password != null)
             {
                 if (_authorizationService.Login(model)) return RedirectToAction("Index", "Home");
-                // zły login lub hasło paatrialview dodaj
             }
-            return View();
+            return RedirectToAction("Login");
+
         }
 
         public ActionResult Logout()

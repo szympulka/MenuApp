@@ -8,15 +8,28 @@ using System;
 using System.Data.Entity;
 using MenuApp.Services.Models;
 using MenuWeb.Core.Entities;
-
+using MenuApp.Common;
+using MenuApp.Services.AzureService;
+using MenuApp.Services.Fakes.AzureService;
 
 namespace MenuApp.Services.RecipeService
 {
     public class RecipeService : BaseService, IRecipeService
     {
-        public RecipeService(IDataContext dataContext) : base(dataContext)
+#if DEBUG
+        private IAzureServiceFake _azureService;
+        public RecipeService(IDataContext dataContext, IAzureServiceFake azureService) : base(dataContext)
         {
+            _azureService = azureService;
         }
+#else
+        private IAzureService _azureService; 
+        public RecipeService(IDataContext dataContext,IAzureService azureService) : base(dataContext)
+        {
+            _azureService = azureService;
+        }
+#endif
+
         public void AddRecipe(AddRecipeModel recipe, HttpPostedFileBase file)
         {
             var date = new DateTimeHelper();
@@ -53,7 +66,7 @@ namespace MenuApp.Services.RecipeService
                 Recipe.CategoryId = categoryRecipe.Id;               
             }
 
-
+            _dataContext.Add<Recipe>(Recipe);
 
             foreach (var p in recipe.RecipeComponents)
             {
@@ -66,7 +79,7 @@ namespace MenuApp.Services.RecipeService
                 var component = _dataContext.All<RecipeComponent>().FirstOrDefault(x => x.Name == p);
                 if (component == null)
                 {
-                    _dataContext.Add<Recipe>(Recipe);
+
                     _dataContext.Add<RecipeComponent>(compsobj);
                     Recipe.RecipeComponents.Add(compsobj);
                 }
@@ -75,9 +88,21 @@ namespace MenuApp.Services.RecipeService
                     Recipe.RecipeComponents.Add(component);
                 }
             }
-
             _dataContext.SaveChanges();
-            FileAzureUploaderHelper.UploadPhoto(recipe.Title, file);
+            if (file != null)
+            {
+                var fileExtension = file.FileName.Split('.').ToArray().Last();
+                string photoName = Consts.PrefixPhotoNameMain + "-" + TokensHelper.GetTokenGuid() + "." + fileExtension;
+                var photo = new RecipePhotoLink();
+                photo.RecipeID = Recipe.Id;
+                photo.Url = photoName;
+                var isUploaded = _azureService.UploadPhoto(photoName, file);
+                if (isUploaded)
+                {
+                    _dataContext.Add<RecipePhotoLink>(photo);
+                    _dataContext.SaveChanges();
+                }
+            }
         }
 
 

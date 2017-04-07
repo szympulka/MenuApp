@@ -50,11 +50,17 @@ namespace MenuApp.Services.UserService
         public bool ValidateUser(LoginUserModel userModel)
         {
             var user = _dataContext.All<User>().FirstOrDefault(u => u.UserName == userModel.UserName);
-
+#if DEBUG
             if (user != null && userModel.UserName == user.UserName && PassHelper.HashPassword(userModel.Password) == user.Password)
             {
                 return true;
             }
+#else
+            if (user != null && userModel.UserName == user.UserName && PassHelper.HashPassword(userModel.Password) == user.Password && user.IsActive)
+            {
+                return true;
+            }
+#endif
             return false;
         }
         public string UserRole(string userName)
@@ -73,7 +79,7 @@ namespace MenuApp.Services.UserService
         }
         public List<User> ShowUsers()
         {
-           return _dataContext.All<User>().AsNoTracking().ToList();         
+            return _dataContext.All<User>().AsNoTracking().ToList();
         }
         public void SubstitutionActive(int id)
         {

@@ -5,7 +5,7 @@ using MenuApp.Core.Entities;
 
 namespace MenuWeb.Core.Entities
 {
-    public class Comment
+    public class RecipeComment
     {
         [Key]
         public int Id { get; set; }

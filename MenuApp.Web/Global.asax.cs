@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using System.Web.Routing;
 using MenuApp.Web.App_Start;
+using System.Web.Optimization;
 
 namespace MenuApp.Web
 {
@@ -10,6 +11,7 @@ namespace MenuApp.Web
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            BundleConfig.RegisterBundles(BundleTable.Bundles);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             AutofacConfig.Configure();
         }

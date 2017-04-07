@@ -63,7 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\BigData\Logon.cs" />
-    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\RecipeComment.cs" />
     <Compile Include="Entities\RecipeComponent.cs" />
     <Compile Include="Entities\Contact.cs" />
     <Compile Include="DataContext.cs" />
@@ -71,6 +71,7 @@
     <Compile Include="Entities\Newsletter.cs" />
     <Compile Include="Entities\RecipeCategory.cs" />
     <Compile Include="Entities\RecipeLike.cs" />
+    <Compile Include="Entities\RecipePhotoLink.cs" />
     <Compile Include="IDataContext.cs" />
     <Compile Include="Entities\Recipe.cs" />
     <Compile Include="Entities\User.cs" />
@@ -86,12 +87,20 @@
     <Compile Include="Migrations\201703302156427_LogNew.Designer.cs">
       <DependentUpon>201703302156427_LogNew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704041614400_LogonServer.cs" />
+    <Compile Include="Migrations\201704041614400_LogonServer.Designer.cs">
+      <DependentUpon>201704041614400_LogonServer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704050903422_RecipePhotoLinks.cs" />
+    <Compile Include="Migrations\201704050903422_RecipePhotoLinks.Designer.cs">
+      <DependentUpon>201704050903422_RecipePhotoLinks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram.dgml" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +118,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703302156427_LogNew.resx">
       <DependentUpon>201703302156427_LogNew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704041614400_LogonServer.resx">
+      <DependentUpon>201704041614400_LogonServer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704050903422_RecipePhotoLinks.resx">
+      <DependentUpon>201704050903422_RecipePhotoLinks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

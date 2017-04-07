@@ -1,21 +1,16 @@
 ﻿<!DOCTYPE html>
 @{
     ViewBag.Title = "Breakfast";
-    Layout = "~/Views/Layouts/_NavBar.cshtml";
-    Styles.Render("~/Breakfast");
-    Scripts.Render("~/Breakfast");
 }
 
 <html>
 <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
-
+    @Styles.Render("~/bundles/BreakfastCSS")
 </head>
 <body>
-
+    @Html.Partial("~/Views/Partials/_NavBar.cshtml")
     <section class="module parallax Breakfast1">
         <div style="height:95%;">
             <div class="DayName">
@@ -35,5 +30,8 @@
     @Html.Partial("~/Views/Partials/_MenuSectionWithFind.cshtml")
 
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
+    @Scripts.Render("~/bundles/BreakfastJS")
 </body>
 </html>

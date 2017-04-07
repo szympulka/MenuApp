@@ -19,5 +19,8 @@ namespace MenuApp.Common
         #region Url
         public const string Url_Registration = "http://yourrecipes.azurewebsites.net/Authorization/ActivateAccount/";
         #endregion
+
+        public static readonly string PrefixPhotoNameMain = "yourrecipes.com-Main-";
+        public static readonly string PrefixPhotoName = "yourrecipes.com/-";
     }
 }

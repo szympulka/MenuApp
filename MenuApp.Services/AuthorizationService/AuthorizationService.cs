@@ -46,19 +46,24 @@ namespace MenuApp.Services.AuthorizationService
         }
 
 
-        public bool Registration(User user)
+        public bool Registration(RegistrationModel userModel)
         {
-            var checkUser = _dataContext.All<User>().FirstOrDefault(x => x.UserName == user.UserName || x.Email == user.Email);
+            var checkUser = _dataContext.All<User>().FirstOrDefault(x => x.UserName == userModel.UserName || x.Email == userModel.Email);
             if (checkUser != null) return false; 
             var date = new DateTimeHelper();
+            var user = new User();
+            user.Email = userModel.Email;
+            user.UserName = userModel.UserName;
             user.Password = PassHelper.HashPassword(user.Password);
             user.DateCreateAccount = date.LocalDateTime();
             user.Role = "User";
             user.DateOfChangePassword = null;
             user.IsActive = false;
-            user.VerificationToken = Guid.NewGuid().ToString();
+            user.VerificationToken = TokensHelper.GetTokenGuid();
+
             _mailService.SendMail_Sendgrid(user.Email, "Potwierdzenie Rejestracji",
                 "Kliknij by potwierdzić! " + Common.Consts.Url_Registration + user.VerificationToken);
+
             _dataContext.Add<User>(user);
             _dataContext.SaveChanges();
             return true;

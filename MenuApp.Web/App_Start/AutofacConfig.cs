@@ -10,10 +10,16 @@ using MenuApp.Core;
 using MenuApp.Core.Entities;
 using MenuApp.Services.AuthorizationService;
 using MenuApp.Services.BigDataService;
+#if DEBUG
+ using MenuApp.Services.Fakes.AzureService;
 using MenuApp.Services.Fakes.MailService;
+#else
+using MenuApp.Services.MailService;
+using MenuApp.Services.AzureService;
+#endif
 using MenuApp.Services.LogService;
 using MenuApp.Services.HomeService;
-using MenuApp.Services.MailService;
+
 
 
 
@@ -24,8 +30,6 @@ namespace MenuApp.Web.App_Start
         public static void Configure()
         {
 
-
-
 #if DEBUG
             var builder = new ContainerBuilder();
             var config = GlobalConfiguration.Configuration;
@@ -33,6 +37,7 @@ namespace MenuApp.Web.App_Start
 
             //if(ConfigurationManager.AppSettings[""])
             builder.RegisterType<MailServiceFake>().As<IMailServiceFake>();
+            builder.RegisterType<AzureServiceFake>().As<IAzureServiceFake>();
             builder.RegisterType<LogService>().As<ILogService>();
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<RecipeService>().As<IRecipeService>();
@@ -48,6 +53,7 @@ namespace MenuApp.Web.App_Start
 
             //if(ConfigurationManager.AppSettings[""])
             builder.RegisterType<MailService>().As<IMailService>();
+            builder.RegisterType<AzureService>().As<IAzureService>();
             builder.RegisterType<LogService>().As<ILogService>();
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<RecipeService>().As<IRecipeService>();

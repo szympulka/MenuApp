@@ -5,7 +5,7 @@ namespace MenuApp.Services.AuthorizationService
 {
     public interface IAuthorizationService
     {
-        bool Registration(User user);
+        bool Registration(RegistrationModel user);
         bool Login(LoginUserModel user);
         void ActivateAccount(string token);
         ChangePasswordModel ChangePasswordByLink(string key);

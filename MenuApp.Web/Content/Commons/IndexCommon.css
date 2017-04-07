@@ -262,7 +262,7 @@ section.module.parallax {
 }
 
 .move {
-    transition: 2s;
+    transition: 1.333s;
 }
 
 .helpClass {
