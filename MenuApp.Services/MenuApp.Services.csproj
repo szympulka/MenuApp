@@ -89,8 +89,9 @@
       <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SendGrid, Version=9.1.0.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sendgrid.9.1.0\lib\net452\SendGrid.dll</HintPath>
+    <Reference Include="SendGrid, Version=8.0.5.0, Culture=neutral, PublicKeyToken=4f047e93159395ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sendgrid.8.0.5\lib\SendGrid.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="SendGrid.CSharp.HTTP.Client, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\SendGrid.CSharp.HTTP.Client.3.1.0\lib\SendGrid.CSharp.HTTP.Client.dll</HintPath>
@@ -123,10 +124,8 @@
     <Compile Include="BaseService.cs" />
     <Compile Include="BigDataService\BigDataService.cs" />
     <Compile Include="BigDataService\IBigDataService.cs" />
-    <Compile Include="Fakes\AzureService\AzureServiceFake.cs" />
-    <Compile Include="Fakes\AzureService\IAzureServiceFake.cs" />
-    <Compile Include="Fakes\MailService\IMailServiceFake.cs" />
-    <Compile Include="Fakes\MailService\MailServiceFake.cs" />
+    <Compile Include="Fakes\AzureServiceFake.cs" />
+    <Compile Include="Fakes\MailServiceFake.cs" />
     <Compile Include="HomeService\HomeSerivce.cs" />
     <Compile Include="HomeService\IHomeSerivce.cs" />
     <Compile Include="LogService\ILogService.cs" />

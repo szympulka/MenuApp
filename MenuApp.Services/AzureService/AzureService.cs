@@ -1,10 +1,5 @@
-﻿using System;
-using Microsoft.Azure;
-using Microsoft.WindowsAzure.Storage;
-using Microsoft.WindowsAzure.Storage.Blob;
-using System.Web;
+﻿using System.Web;
 using MenuApp.Core.Entities;
-using Microsoft.WindowsAzure;
 
 namespace MenuApp.Services.AzureService
 {

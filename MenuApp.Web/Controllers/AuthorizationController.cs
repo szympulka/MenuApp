@@ -1,6 +1,5 @@
 ﻿using System.Web.Mvc;
 using System.Web.Security;
-using MenuApp.Core.Entities;
 using MenuApp.Services.UserService;
 using MenuApp.Services.Models.UserModel;
 using MenuApp.Services.AuthorizationService;

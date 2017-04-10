@@ -9,19 +9,12 @@ using System.Web.Mvc;
 using MenuApp.Core;
 using MenuApp.Core.Entities;
 using MenuApp.Services.AuthorizationService;
-using MenuApp.Services.BigDataService;
-#if DEBUG
- using MenuApp.Services.Fakes.AzureService;
-using MenuApp.Services.Fakes.MailService;
-#else
-using MenuApp.Services.MailService;
 using MenuApp.Services.AzureService;
-#endif
+using MenuApp.Services.BigDataService;
 using MenuApp.Services.LogService;
 using MenuApp.Services.HomeService;
-
-
-
+using MenuApp.Services.MailService;
+using MenuApp.Services.Fakes;
 
 namespace MenuApp.Web.App_Start
 {
@@ -36,8 +29,11 @@ namespace MenuApp.Web.App_Start
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
 
             //if(ConfigurationManager.AppSettings[""])
-            builder.RegisterType<MailServiceFake>().As<IMailServiceFake>();
-            builder.RegisterType<AzureServiceFake>().As<IAzureServiceFake>();
+
+            #region Fakes
+            builder.RegisterType<MailServiceFake>().As<IMailService>();
+            builder.RegisterType<AzureServiceFake>().As<IAzureService>();
+            #endregion
             builder.RegisterType<LogService>().As<ILogService>();
             builder.RegisterType<UserService>().As<IUserService>();
             builder.RegisterType<RecipeService>().As<IRecipeService>();

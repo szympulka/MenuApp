@@ -5,8 +5,6 @@ using System.Web;
 using MenuApp.Common.Helpers;
 using MenuApp.Services.Models;
 using PagedList;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace MenuApp.Web.Controllers
 {

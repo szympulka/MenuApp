@@ -10,25 +10,16 @@ using MenuApp.Services.Models;
 using MenuWeb.Core.Entities;
 using MenuApp.Common;
 using MenuApp.Services.AzureService;
-using MenuApp.Services.Fakes.AzureService;
 
 namespace MenuApp.Services.RecipeService
 {
     public class RecipeService : BaseService, IRecipeService
     {
-#if DEBUG
-        private IAzureServiceFake _azureService;
-        public RecipeService(IDataContext dataContext, IAzureServiceFake azureService) : base(dataContext)
-        {
-            _azureService = azureService;
-        }
-#else
         private IAzureService _azureService; 
         public RecipeService(IDataContext dataContext,IAzureService azureService) : base(dataContext)
         {
             _azureService = azureService;
         }
-#endif
 
         public void AddRecipe(AddRecipeModel recipe, HttpPostedFileBase file)
         {

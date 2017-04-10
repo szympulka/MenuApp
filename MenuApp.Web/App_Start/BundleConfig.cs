@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace MenuApp.Web.App_Start
 {

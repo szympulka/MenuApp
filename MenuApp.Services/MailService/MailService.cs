@@ -11,7 +11,6 @@ using SendGrid;
 using SendGrid.Helpers.Mail;
 using MenuApp.Services.LogService;
 using MenuWeb.Core.Entities;
-using Castle.DynamicProxy;
 
 namespace MenuApp.Services.MailService
 {

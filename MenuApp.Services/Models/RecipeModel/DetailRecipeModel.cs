@@ -1,5 +1,4 @@
-﻿using MenuApp.Core.Entities;
-using MenuWeb.Core.Entities;
+﻿using MenuWeb.Core.Entities;
 using System;
 using System.Collections.Generic;
 

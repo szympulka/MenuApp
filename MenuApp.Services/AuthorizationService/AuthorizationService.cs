@@ -1,10 +1,9 @@
-﻿using System;
-using MenuApp.Core.Entities;
+﻿using MenuApp.Core.Entities;
 using MenuApp.Services.Models.UserModel;
 using MenuApp.Common.Helpers;
 using System.Web.Security;
-using MenuApp.Services.Fakes.MailService;
 using System.Linq;
+using MenuApp.Services.MailService;
 #if !DEBUG
 using MenuApp.Services.MailService;
 #endif
@@ -14,15 +13,7 @@ namespace MenuApp.Services.AuthorizationService
 {
     public class AuthorizationService : BaseService, IAuthorizationService
     {
-#if DEBUG
-        private IUserService _userService;
-        private IMailServiceFake _mailService;
-        public AuthorizationService(IDataContext dataContext, IUserService userService, IMailServiceFake mailService) : base(dataContext)
-        {
-            _mailService = mailService;
-            _userService = userService;
-        }
-#else
+
         private IUserService _userService;
         private IMailService _mailService;
         public AuthorizationService(IDataContext dataContext, IUserService userService, IMailService mailService) : base(dataContext)
@@ -30,19 +21,15 @@ namespace MenuApp.Services.AuthorizationService
             _mailService = mailService;
             _userService = userService;
         }
-#endif
 
 
 
 
         public bool Login(LoginUserModel user)
         {
-            if (_userService.ValidateUser(user))
-            {
-                FormsAuthentication.SetAuthCookie(user.UserName, false);
-                return true;
-            }
-            return false;
+            if (!_userService.ValidateUser(user)) return false;
+            FormsAuthentication.SetAuthCookie(user.UserName, false);
+            return true;
         }
 
 
@@ -54,7 +41,7 @@ namespace MenuApp.Services.AuthorizationService
             var user = new User();
             user.Email = userModel.Email;
             user.UserName = userModel.UserName;
-            user.Password = PassHelper.HashPassword(user.Password);
+            user.Password = PassHelper.HashPassword(userModel.Password);
             user.DateCreateAccount = date.LocalDateTime();
             user.Role = "User";
             user.DateOfChangePassword = null;

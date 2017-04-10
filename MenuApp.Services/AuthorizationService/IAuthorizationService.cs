@@ -1,5 +1,4 @@
-﻿using MenuApp.Core.Entities;
-using MenuApp.Services.Models.UserModel;
+﻿using MenuApp.Services.Models.UserModel;
 
 namespace MenuApp.Services.AuthorizationService
 {
