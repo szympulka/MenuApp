@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System.Diagnostics;
+using System.Reflection;
+using System.Web.Configuration;
 using System.Web.Http;
 using Autofac;
 using Autofac.Integration.Mvc;
@@ -23,42 +25,41 @@ namespace MenuApp.Web.App_Start
         public static void Configure()
         {
 
-#if DEBUG
             var builder = new ContainerBuilder();
             var config = GlobalConfiguration.Configuration;
             builder.RegisterControllers(Assembly.GetExecutingAssembly());
+            //if()
+            if (WebConfigurationManager.AppSettings["AutoFacConfiguration"] == "develop")
+            {
+                #region Fakes
 
-            //if(ConfigurationManager.AppSettings[""])
+                builder.RegisterType<MailServiceFake>().As<IMailService>();
+                builder.RegisterType<AzureServiceFake>().As<IAzureService>();
 
-            #region Fakes
-            builder.RegisterType<MailServiceFake>().As<IMailService>();
-            builder.RegisterType<AzureServiceFake>().As<IAzureService>();
-            #endregion
-            builder.RegisterType<LogService>().As<ILogService>();
-            builder.RegisterType<UserService>().As<IUserService>();
-            builder.RegisterType<RecipeService>().As<IRecipeService>();
-            builder.RegisterType<BigDataService>().As<IBigDataService>();
-            builder.RegisterType<QuestionService>().As<IQuestionService>();
-            builder.RegisterType<DataContext>().As<IDataContext>();
-            builder.RegisterType<AuthorizationService>().As<IAuthorizationService>();
-            builder.RegisterType<HomeSerivce>().As<IHomeSerivce>();
-#else 
-            var builder = new ContainerBuilder();
-            var config = GlobalConfiguration.Configuration;
-            builder.RegisterControllers(Assembly.GetExecutingAssembly());
+                #endregion
 
-            //if(ConfigurationManager.AppSettings[""])
-            builder.RegisterType<MailService>().As<IMailService>();
-            builder.RegisterType<AzureService>().As<IAzureService>();
-            builder.RegisterType<LogService>().As<ILogService>();
-            builder.RegisterType<UserService>().As<IUserService>();
-            builder.RegisterType<RecipeService>().As<IRecipeService>();
-            builder.RegisterType<BigDataService>().As<IBigDataService>();
-            builder.RegisterType<QuestionService>().As<IQuestionService>();
-            builder.RegisterType<DataContext>().As<IDataContext>();
-            builder.RegisterType<AuthorizationService>().As<IAuthorizationService>();
-           builder.RegisterType<HomeSerivce>().As<IHomeSerivce>();
-#endif
+                builder.RegisterType<LogService>().As<ILogService>();
+                builder.RegisterType<UserService>().As<IUserService>();
+                builder.RegisterType<RecipeService>().As<IRecipeService>();
+                builder.RegisterType<BigDataService>().As<IBigDataService>();
+                builder.RegisterType<QuestionService>().As<IQuestionService>();
+                builder.RegisterType<DataContext>().As<IDataContext>();
+                builder.RegisterType<AuthorizationService>().As<IAuthorizationService>();
+                builder.RegisterType<HomeSerivce>().As<IHomeSerivce>();
+            }
+            else
+            {
+                builder.RegisterType<MailService>().As<IMailService>();
+                builder.RegisterType<AzureService>().As<IAzureService>();
+                builder.RegisterType<LogService>().As<ILogService>();
+                builder.RegisterType<UserService>().As<IUserService>();
+                builder.RegisterType<RecipeService>().As<IRecipeService>();
+                builder.RegisterType<BigDataService>().As<IBigDataService>();
+                builder.RegisterType<QuestionService>().As<IQuestionService>();
+                builder.RegisterType<DataContext>().As<IDataContext>();
+                builder.RegisterType<AuthorizationService>().As<IAuthorizationService>();
+                builder.RegisterType<HomeSerivce>().As<IHomeSerivce>();
+            }
 
             var container = builder.Build();
 

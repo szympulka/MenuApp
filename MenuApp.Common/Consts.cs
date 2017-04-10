@@ -21,6 +21,6 @@ namespace MenuApp.Common
         #endregion
 
         public static readonly string PrefixPhotoNameMain = "yourrecipes.com-Main-";
-        public static readonly string PrefixPhotoName = "yourrecipes.com/-";
+        public static readonly string PrefixPhotoName = "yourrecipes.com-";
     }
 }
